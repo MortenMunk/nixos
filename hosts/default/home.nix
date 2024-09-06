@@ -21,9 +21,10 @@
 	./modules/system/clip.nix
 	./modules/system/rofi.nix
 	./modules/system/git.nix
+	./modules/system/dunst.nix
 
 	./modules/terminal/kitty.nix
-	./modules/terminal/fish.nix
+	./modules/terminal/zsh.nix
 
 	./modules/browser/brave.nix
 
@@ -33,7 +34,6 @@
   home.packages = with pkgs; [
 	# WM
 	waybar
-	dunst
 	kitty
 
 	# CMD

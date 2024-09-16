@@ -11,7 +11,6 @@
 
 	./modules/text-editor/vscodium.nix
 	#./modules/text-editor/obsidian.nix
-	#./modules/text-editor/neovim.nix
 	./modules/text-editor/nvim.nix
 
 	./modules/style/fonts.nix
@@ -20,13 +19,13 @@
 	./modules/wm/hyprlock.nix
 	./modules/wm/hypridle.nix
 	./modules/wm/hyprpaper.nix
-	#./modules/wm/hyprshot.nix
 	
 	./modules/system/btop.nix
 	./modules/system/clip.nix
 	./modules/system/rofi.nix
 	./modules/system/git.nix
 	./modules/system/dunst.nix
+	./modules/system/screenshot.nix
 
 	./modules/terminal/kitty.nix
 	./modules/terminal/zsh.nix

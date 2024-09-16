@@ -12,7 +12,10 @@ in
 {  
     wayland.windowManager.hyprland = {
 		enable = true;
-
+		extraConfig = ''
+			bind = , Print, exec, grim -g "$(slurp)" - | wl-copy | dunstify "Screenshot of the region copied" -t 1000 # screenshot of a region 
+ 			bind = SUPER, Print, exec, grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | dunstify "Screenshot of whole screen saved" -t 1000 # screenshot of the whole screen
+ 		'';
 		settings = {
 			exec-once = ''${startupScript}/bin/start'';
 
@@ -110,6 +113,9 @@ in
 				"$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 				"$mod, P, pseudo, #dwindle"
 				"$mod, J, togglesplit, #dwindle"
+				
+				# HYPRSHOT
+
 
 				# MOVEFOCUS
 				"$mod, left, movefocus, l"
@@ -158,6 +164,7 @@ in
 			windowrule = [
 				"opaque, brave"
 				"opaque, zathura"
+				"opaque, vesktop"
 			];
 		};
 	};

@@ -12,7 +12,7 @@
 
             background = [
                 {
-                    # path = <link>
+                    path = "/etc/nixos/wallpapers/lock.jpg";
                     blur_size = 5;
                     blur_passes = 1;
                     noise = 0.0117;
@@ -33,7 +33,7 @@
                     outer_color = "rgb(139, 213, 202)"; # teal
                     inner_color = "rgb(245, 169, 127)"; # peach
                     font_color = "rgb(202, 211, 245)"; # text
-                    placeholder_text = "<i>Password...<i>";
+                    placeholder_text = "<i>Password...</i>";
                     hide_input = false;
                     position = "0, 200";
                     halign = "center";
@@ -76,21 +76,6 @@
                     font_family = "JetBrains Mono Nerd Font 10";
                     position = "50, 0";
                     halign = "left";
-                    valign = "bottom";
-                }
-            ];
-
-            image = [
-                {
-                    # path = <link>
-                    size = 230;
-                    rounding = -1;
-                    border_size = 2;
-                    border_color = "rgb(238, 153, 160)"; # maroon
-                    rotate = 0;
-                    reload_time = -1;
-                    position = "0, 300";
-                    halign = "center";
                     valign = "bottom";
                 }
             ];

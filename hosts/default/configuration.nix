@@ -128,6 +128,7 @@
     nwg-look
     obsidian
     networkmanagerapplet
+    brightnessctl
   ];
 
   nixpkgs.config.packageOverrides = pkgs: {

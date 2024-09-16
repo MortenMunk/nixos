@@ -13,7 +13,7 @@
             rboot = "sudo nixos-rebuild boot --flake /etc/nixos#default";
             nixfiles = "cd /etc/nixos/";
             config = "cd ~/.config/";
-            home = "cd /home/morten/";
+            home = "cd ~/home/morten/";
         };
 
         oh-my-zsh = {

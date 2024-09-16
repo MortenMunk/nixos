@@ -1,11 +1,12 @@
 {pkgs, ...}: 
 let 
-	wallpaperPath = "/home/morten/wallpapers/wallpaper.webp";
 	startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
 	${pkgs.waybar}/bin/waybar &
+	${pkgs.hypridle}/bin/hypridle &
+	${pkgs.hyprpaper}/bin/hyprpaper &
 	wl-paste --type text --watch cliphist store &
 	wl-paste --type image --watch cliphist store &
-	${pkgs.fish}/bin/fish -c autostart &
+	nm-applet &
 	'';
 in
 {  
@@ -156,6 +157,7 @@ in
 
 			windowrule = [
 				"opaque, brave"
+				"opaque, zathura"
 			];
 		};
 	};

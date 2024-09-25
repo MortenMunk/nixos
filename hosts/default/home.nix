@@ -31,15 +31,14 @@
 	./modules/terminal/zsh.nix
 
 	./modules/browser/brave.nix
-
+	
+	./modules/other/wireshark.nix
 	./modules/other/discord.nix
   ];
 
   home.packages = with pkgs; [
 	# WM
 	waybar
-	kitty
-
 	# CMD
 	neofetch
 	nautilus

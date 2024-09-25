@@ -21,6 +21,8 @@
 				nvim-treesitter-with-plugins
 				nvim-lspconfig
 				plenary-nvim
+				telescope-nvim
+				nvim-autopairs
 			];
 	};
 }

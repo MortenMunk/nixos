@@ -3,6 +3,7 @@
         zathura
         imv
         mpv
+	unzip
     ];
 
     programs = {

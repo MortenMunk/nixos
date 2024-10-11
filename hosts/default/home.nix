@@ -11,7 +11,8 @@
 
 	./modules/text-editor/vscodium.nix
 	#./modules/text-editor/obsidian.nix
-	./modules/text-editor/nvim.nix
+	#./modules/text-editor/nvim.nix
+	./modules/text-editor/nixvim/default.nix
 
 	./modules/style/fonts.nix
 
@@ -34,6 +35,7 @@
 	
 	./modules/other/wireshark.nix
 	./modules/other/discord.nix
+	./modules/other/direnv.nix
   ];
 
   home.packages = with pkgs; [

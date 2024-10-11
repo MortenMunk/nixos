@@ -13,10 +13,13 @@
             url = "https://github.com/hyprwm/Hyprland";
             submodules = true;
         };
-        swww.url = "github:LGFae/swww";
+	nixvim = {
+	    url = "github:nix-community/nixvim";
+	    inputs.nixpkgs.follows = "nixpkgs";
+	};
     };
 
-    outputs = { self, nixpkgs, hyprland, home-manager, catppuccin, swww, ... }@inputs:
+    outputs = { self, nixpkgs, hyprland, home-manager, catppuccin, nixvim, ... }@inputs:
         let 
             system = "x86_64-linux";
             pkgs = nixpkgs.legacyPackages.${system};
@@ -27,6 +30,7 @@
                     ./hosts/default/configuration.nix
                     inputs.home-manager.nixosModules.default
                     catppuccin.nixosModules.catppuccin
+		    nixvim.nixosModules.nixvim
                 ];
             };
     };

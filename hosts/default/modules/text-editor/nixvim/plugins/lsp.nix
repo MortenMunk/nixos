@@ -24,6 +24,26 @@
 
         servers = {
           nixd.enable = true;
+          hls = {
+            enable = true;
+            settings = {
+              haskell = {
+                hlintOn = true;
+                plugin = {
+                  hlint = {
+                    codeActionsOn = true;
+                    diagnosticsOn = true;
+                    hlintRules = {
+                      ignore = [
+                        "useCamelCase"
+                      ];
+                    };
+                  };
+                };
+              };
+            };
+          };
+          ts_ls.enable=true;
         };
       };
     };

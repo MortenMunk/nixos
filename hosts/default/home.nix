@@ -1,41 +1,19 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   home.username = "morten";
   home.homeDirectory = "/home/morten";
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   imports = [
-	./modules/style/themes.nix
-
-	./modules/file-managers/media.nix
-
-	./modules/text-editor/vscodium.nix
-	#./modules/text-editor/obsidian.nix
-	#./modules/text-editor/nvim.nix
-	./modules/text-editor/nixvim/default.nix
-
-	./modules/style/fonts.nix
-
-	./modules/wm/hyprland.nix
-	./modules/wm/hyprlock.nix
-	./modules/wm/hypridle.nix
-	./modules/wm/hyprpaper.nix
-	
-	./modules/system/btop.nix
-	./modules/system/clip.nix
-	./modules/system/rofi.nix
-	./modules/system/git.nix
-	./modules/system/dunst.nix
-	./modules/system/screenshot.nix
-
-	./modules/terminal/kitty.nix
-	./modules/terminal/zsh.nix
-
-	./modules/browser/brave.nix
-	
-	./modules/other/wireshark.nix
-	./modules/other/discord.nix
-	./modules/other/direnv.nix
+    ./modules/style/themes.nix
+    ./modules/file-managers/media.nix
+	  ./modules/text-editor/nixvim/default.nix
+	  ./modules/style/fonts.nix
+	  ./modules/wm/default.nix
+    ./modules/system/default.nix
+	  ./modules/terminal/default.nix
+	  ./modules/browser/brave.nix
+	  ./modules/other/default.nix
   ];
 
   home.packages = with pkgs; [

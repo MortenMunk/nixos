@@ -5,6 +5,8 @@
     ./plugins/lsp.nix
     ./plugins/treesitter.nix
     ./plugins/neo-tree.nix
+    ./plugins/which-key.nix
+    ./plugins/toggleterm.nix
 	];
 
 	programs.nixvim = {

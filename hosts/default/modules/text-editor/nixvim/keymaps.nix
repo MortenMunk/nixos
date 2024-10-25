@@ -13,47 +13,6 @@
         key = "<leader>c";
         action = "+context";
       }
-      {
-        key = "<leader>co";
-        action = "<CMD>TSContextToggle<CR>";
-        options.desc = "Toggle Treesitter context";
-      }
-      {
-        key = "<leader>ct";
-        action = "<CMD>CopilotChatToggle<CR>";
-        options.desc = "Toggle Copilot Chat Window";
-      }
-      {
-        key = "<leader>cf";
-        action = "<CMD>CopilotChatFix<CR>";
-        options.desc = "Fix the selected code";
-      }
-      {
-        key = "<leader>cs";
-        action = "<CMD>CopilotChatStop<CR>";
-        options.desc = "Stop current Copilot output";
-      }
-      {
-        key = "<leader>cr";
-        action = "<CMD>CopilotChatReview<CR>";
-        options.desc = "Review the selected code";
-      }
-      {
-        key = "<leader>ce";
-        action = "<CMD>CopilotChatExplain<CR>";
-        options.desc = "Give an explanation for the selected code";
-      }
-      {
-        key = "<leader>cd";
-        action = "<CMD>CopilotChatDocs<CR>";
-        options.desc = "Add documentation for the selection";
-      }
-      {
-        key = "<leader>cp";
-        action = "<CMD>CopilotChatTests<CR>";
-        options.desc = "Add tests for my code";
-      }
-
       # File
       {
         mode = "n";
@@ -66,7 +25,6 @@
         action = "<CMD>lua vim.lsp.buf.format()<CR>";
         options.desc = "Format the current buffer";
       }
-
       # Git    
       {
         mode = "n";
@@ -139,7 +97,6 @@
         action = "<CMD>tabprevious<CR>";
         options.desc = "Go to the previous tab";
       }
-
       # Terminal
       {
         # Escape terminal mode using ESC
@@ -148,7 +105,6 @@
         action = "<C-\\><C-n>";
         options.desc = "Escape terminal mode";
       }
-
       # Trouble 
       {
         mode = "n";
@@ -159,6 +115,11 @@
         key = "<leader>dt";
         action = "<CMD>Trouble diagnostics toggle<CR>";
         options.desc = "Toggle trouble";
+      }
+      {
+        key = "<leader>ca";
+        action = "<CMD>lua vim.lsp.buf.code_action()<CR>";
+        options.desc = "Show available code actions";
       }
 		];
 	};  

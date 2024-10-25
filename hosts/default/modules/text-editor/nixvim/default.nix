@@ -13,7 +13,13 @@
 		enable = true;
 		defaultEditor = true;
 
-		colorschemes.catppuccin.enable = true;
+		colorschemes.catppuccin = {
+      enable = true;
+      settings = {
+        flavour = "mocha";
+      };
+    };
+
 		plugins.web-devicons.enable = true;
 
 		diagnostics = { virtual_lines.only_current_line = true; };

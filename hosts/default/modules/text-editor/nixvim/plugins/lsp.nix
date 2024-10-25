@@ -23,26 +23,11 @@
         };
 
         servers = {
+          # NIX
           nixd.enable = true;
-          hls = {
-            enable = true;
-            settings = {
-              haskell = {
-                hlintOn = true;
-                plugin = {
-                  hlint = {
-                    codeActionsOn = true;
-                    diagnosticsOn = true;
-                    hlintRules = {
-                      ignore = [
-                        "useCamelCase"
-                      ];
-                    };
-                  };
-                };
-              };
-            };
-          };
+          # HASKELL
+          hls.enable = true;
+          # TYPESCRIPT/JAVASCRIPT
           ts_ls.enable=true;
         };
       };

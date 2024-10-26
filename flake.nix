@@ -13,10 +13,10 @@
             url = "https://github.com/hyprwm/Hyprland";
             submodules = true;
         };
-	nixvim = {
-	    url = "github:nix-community/nixvim";
-	    inputs.nixpkgs.follows = "nixpkgs";
-	};
+	      nixvim = {
+	          url = "github:nix-community/nixvim";
+	          inputs.nixpkgs.follows = "nixpkgs";
+	      };
     };
 
     outputs = { self, nixpkgs, hyprland, home-manager, catppuccin, nixvim, ... }@inputs:
@@ -30,7 +30,7 @@
                     ./hosts/default/configuration.nix
                     inputs.home-manager.nixosModules.default
                     catppuccin.nixosModules.catppuccin
-		    nixvim.nixosModules.nixvim
+		                nixvim.nixosModules.nixvim
                 ];
             };
     };

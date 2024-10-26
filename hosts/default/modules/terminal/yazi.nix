@@ -1,7 +1,7 @@
 {
   programs.yazi = {
     enable = true;
-    programs.catppuccin.yazi = {
+    catppuccin = {
       enable = true;
       flavor = "macchiato";
     };

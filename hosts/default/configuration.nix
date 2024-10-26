@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports =
@@ -99,8 +99,6 @@
     isNormalUser = true;
     description = "Morten";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
   };
   
   home-manager = {
@@ -109,7 +107,7 @@
       imports = [
         ./home.nix
         inputs.catppuccin.homeManagerModules.catppuccin
-	inputs.nixvim.homeManagerModules.nixvim
+      	inputs.nixvim.homeManagerModules.nixvim
       ];
     };
   };
@@ -132,6 +130,8 @@
     networkmanagerapplet
     brightnessctl
   ];
+
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   nixpkgs.config.packageOverrides = pkgs: {
 	  colloid-icon-theme = pkgs.colloid-icon-theme.override { colorVariants = ["teal"]; };

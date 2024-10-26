@@ -24,7 +24,22 @@
 
         servers = {
           # NIX
-          nixd.enable = true;
+          nixd = {
+            enable = true;
+            settings = {
+              formatting.command = ["alejandra"];
+              nixpkgs = {
+                expr = "import <nixpkgs> {}";
+              };
+              options = let 
+                getFlake = ''(builtins.getFlake "/../etc/nixos")'';
+              in {
+                nixos = {
+                  expr = ''${getFlake}.nixosConfigurations.morten.options'';
+                };
+              };
+            };
+          };
           # HASKELL
           hls.enable = true;
           # TYPESCRIPT/JAVASCRIPT

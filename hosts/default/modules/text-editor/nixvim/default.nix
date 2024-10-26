@@ -7,6 +7,9 @@
     ./plugins/neo-tree.nix
     ./plugins/which-key.nix
     ./plugins/toggleterm.nix
+    ./plugins/cmp.nix
+    ./plugins/luasnip.nix
+    ./plugins/indent.nix
 	];
 
 	programs.nixvim = {

@@ -35,8 +35,6 @@
                 getFlake = ''(builtins.getFlake "/../etc/nixos")'';
               in {
                 nixos.expr = ''${getFlake}.nixosConfigurations.default.options'';
-                nixvim.expr = ''${getFlake}.nixvim.options'';
-                home-manager.expr = ''${getFlake}.homeConfigurations.morten.options'';
               };
             };
           };

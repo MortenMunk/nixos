@@ -11,6 +11,11 @@
 		catppuccin-qt5ct
 	];
 
+  wayland.windowManager.hyprland.catppuccin = {
+    enable = true;
+    flavor = "macchiato";
+  };
+
 	home.sessionVariables = {
 		GTK_THEME = "catppuccin-frappe-blue-standard";
 	};

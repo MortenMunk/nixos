@@ -9,7 +9,13 @@
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
-    syntaxHighlighting.enable = true;
+    syntaxHighlighting = {
+      enable = true;
+      catppuccin = {
+        enable = true;
+        flavor = "macchiato";
+      };
+    };
     shellAliases = {
       cat = "${pkgs.bat}/bin/bat";
       l = "${pkgs.eza}/bin/eza --icons --group-directories-first --group --long --all";
@@ -28,6 +34,7 @@
       config = "cd ~/.config/";
       home = "cd";
       software = "cd ~/software/";
+      switch = "git add . && sudo nixos-rebuild switch --flake /etc/nixos#default |& nom";
     };
 
     oh-my-zsh = {

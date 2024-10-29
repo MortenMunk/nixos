@@ -17,11 +17,9 @@
   ];
 
   home.packages = with pkgs; [
-	# WM
-	waybar
-	# CMD
-	neofetch
-	nautilus
+	  pwvucontrol
+    neofetch
+	  nautilus
   ];
 
   home.sessionVariables = {

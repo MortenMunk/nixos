@@ -7,7 +7,7 @@
   imports = [
     ./modules/style/themes.nix
     ./modules/file-managers/media.nix
-	  ./modules/text-editor/nixvim/default.nix
+	  ./modules/text-editor/default.nix
 	  ./modules/style/fonts.nix
 	  ./modules/wm/default.nix
     ./modules/system/default.nix
@@ -17,7 +17,6 @@
   ];
 
   home.packages = with pkgs; [
-	  pwvucontrol
     neofetch
 	  nautilus
   ];

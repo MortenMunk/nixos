@@ -6,5 +6,6 @@
 	  ./git.nix
 	  ./dunst.nix
 	  ./screenshot.nix
+    ./sound.nix
   ];
 }

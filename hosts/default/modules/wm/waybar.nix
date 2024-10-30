@@ -362,7 +362,8 @@
             medium = 50;
             lower-medium = 30;
             low = 10;
-          }; 
+          };
+          on-click = "kitty btop";
         };
 
         disk = {

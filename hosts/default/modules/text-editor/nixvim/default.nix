@@ -10,6 +10,7 @@
     ./plugins/cmp.nix
     ./plugins/luasnip.nix
     ./plugins/indent.nix
+    ./plugins/lualine.nix
 	];
 
 	programs.nixvim = {

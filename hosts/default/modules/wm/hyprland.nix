@@ -20,7 +20,7 @@ in
 			exec-once = ''${startupScript}/bin/start'';
 
 			# MONITOR
-			monitor = ",preferred,auto, 1.2";
+			monitor = ",preferred,auto, 1.2, mirror, eDP-1";
 			
 			xwayland = {
 				force_zero_scaling = true;
@@ -160,8 +160,8 @@ in
 				"$mod, mouse:272, movewindow"
 				"$mod, mouse:273, resizewindow"
 			];
-
-			windowrule = [
+			
+      windowrule = [
 				"opaque, brave"
 				"opaque, zathura"
 				"opaque, vesktop"

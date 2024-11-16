@@ -265,8 +265,7 @@
             "memory" 
             "disk" 
             "battery" 
-            "pulseaudio#audio" 
-            "pulseaudio#mic" 
+            "pulseaudio" 
         ];
 
         "custom/os_button" = {
@@ -412,10 +411,10 @@
           spacing = 2;
         };
 
-        "pulseaudio#audio" = {
+        "pulseaudio" = {
           tooltip-format = "{desc}\n{format_source}";
-          format = "{icon}";
-          format-muted = "󰝟";
+          format = "{icon} {format_source}";
+          format-muted = "󰝟 {format_source}";
           format-source = "󰍬";
           format-source-muted = "󰍭";
           format-icons = {
@@ -434,14 +433,6 @@
             ];
           };
           on-click = "pwvucontrol";
-        };
-
-        "pulseaudio#mic" = {
-          format = "{format_source}";
-          format-source-muted = "󰍭";
-          format-source =  "󰍬";
-          tooltip-format = "{desc}\n{format_source}";
-	        on-click = "kitty pwvucontrol";
         };
       };
     };

@@ -6,7 +6,7 @@ let
 	${pkgs.hyprpaper}/bin/hyprpaper &
 	wl-paste --type text --watch cliphist store &
 	wl-paste --type image --watch cliphist store &
-	nm-applet &
+	nm-applet --indicator &
 	'';
 in
 {  
@@ -20,7 +20,10 @@ in
 			exec-once = ''${startupScript}/bin/start'';
 
 			# MONITOR
-			monitor = ",preferred,auto, 1.2, mirror, eDP-1";
+      monitor = [
+        ", preferred, auto, 1.2"
+        "HDMI-A-1,preferred,auto, 1, mirror, eDP-1"
+      ];
 			
 			xwayland = {
 				force_zero_scaling = true;
@@ -61,12 +64,13 @@ in
 					passes = 2;
 					new_optimizations = true;
 				};
-				drop_shadow = true;
-				shadow_ignore_window = true;
-				shadow_range = 15;
-				shadow_offset = "0 0"; 
-				shadow_render_power = 3;
-				"col.shadow"= "rgba(1E202966)";
+        shadow = {
+          enabled = true;
+          range = 15;
+          ignore_window = true;
+          color = "rgba(1E202966)";
+          render_power = 3;
+        }; 
 			};
 			
 			# ANIMATIONS

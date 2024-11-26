@@ -142,17 +142,17 @@
     };
   };
 
-  services.displayManager.sddm = {
-    enable = true;
-    package = pkgs.kdePackages.sddm;
-    catppuccin = {
-      enable = true;
-      flavor = "macchiato";
-      fontSize = "20";
-      background = "/etc/nixos/wallpapers/login.png";
-      loginBackground = true;
-    };
-  };
+  #services.displayManager.sddm = {
+  #enable = true;
+  #package = pkgs.kdePackages.sddm;
+  #catppuccin = {
+  #enable = true;
+  #flavor = "macchiato";
+  #fontSize = "20";
+  #background = "/etc/nixos/wallpapers/login.png";
+  #loginBackground = true;
+  #};
+  #};
 
   # Flake config
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

@@ -2,7 +2,9 @@
 	imports = [
 		./settings.nix
 		./keymaps.nix
+    ./performance.nix
     ./plugins/lsp.nix
+    ./plugins/rust.nix
     ./plugins/treesitter.nix
     ./plugins/neo-tree.nix
     ./plugins/which-key.nix
@@ -11,6 +13,7 @@
     ./plugins/luasnip.nix
     ./plugins/indent.nix
     ./plugins/lualine.nix
+    ./plugins/conform.nix
 	];
 
 	programs.nixvim = {

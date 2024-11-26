@@ -41,7 +41,10 @@
             };
           };
           # HASKELL
-          hls.enable = true;
+          hls = {
+            enable = true;
+            installGhc = false;
+          };
           # TYPESCRIPT/JAVASCRIPT
           ts_ls.enable=true;
         };

@@ -14,6 +14,9 @@
     ./plugins/indent.nix
     ./plugins/lualine.nix
     ./plugins/conform.nix
+    ./plugins/barbar.nix
+    ./plugins/statuscol.nix
+    ./plugins/startify.nix
 	];
 
 	programs.nixvim = {

@@ -15,8 +15,9 @@
     ./plugins/lualine.nix
     ./plugins/conform.nix
     ./plugins/barbar.nix
-    ./plugins/statuscol.nix
-    ./plugins/startify.nix
+    ./plugins/telescope.nix
+    #./plugins/statuscol.nix
+    ./plugins/startup.nix
 	];
 
 	programs.nixvim = {
@@ -26,7 +27,7 @@
 		colorschemes.catppuccin = {
       enable = true;
       settings = {
-        flavour = "mocha";
+        flavour = "macchiato";
       };
     };
 

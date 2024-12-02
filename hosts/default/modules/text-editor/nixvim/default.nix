@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
 	imports = [
 		./settings.nix
 		./keymaps.nix
@@ -30,6 +30,10 @@
         flavour = "macchiato";
       };
     };
+
+    extraPackages = with pkgs; [
+      ripgrep
+    ];
 
 		plugins.web-devicons.enable = true;
 

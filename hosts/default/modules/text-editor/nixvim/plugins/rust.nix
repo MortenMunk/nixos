@@ -1,7 +1,7 @@
 {
   programs.nixvim.plugins.rustaceanvim = {
     enable = true;
-    rustAnalyzerPackage = null;
+    #rustAnalyzerPackage = null;
 
     settings = {
       tools.test_executor = "background";

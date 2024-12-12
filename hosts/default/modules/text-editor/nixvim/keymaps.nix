@@ -10,7 +10,7 @@
         options.desc = "Toggle NvimTree";
       }
       {
-        key = "<leader>c";
+        key = "<leader>h";
         action = "+context";
       }
       # File

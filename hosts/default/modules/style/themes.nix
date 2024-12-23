@@ -11,9 +11,10 @@
 		catppuccin-qt5ct
 	];
 
-  wayland.windowManager.hyprland.catppuccin = {
+  catppuccin.hyprland = {
     enable = true;
     flavor = "macchiato";
+    accent = "mauve";
   };
 
 	home.sessionVariables = {
@@ -30,12 +31,12 @@
 		flavor = "macchiato";	
 	};
 
-	gtk.catppuccin = {
+	catppuccin.gtk = {
 		enable = true;
 		flavor = "macchiato";
 	};
 
-	qt.style.catppuccin = {
+	catppuccin.kvantum = {
 		enable = true;
 		flavor = "macchiato";
 	};

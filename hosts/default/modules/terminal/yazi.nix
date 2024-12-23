@@ -1,9 +1,11 @@
 {
   programs.yazi = {
     enable = true;
-    catppuccin = {
-      enable = true;
-      flavor = "macchiato";
-    };
+  };
+
+  catppuccin.yazi = {
+    enable = true;
+    flavor = "macchiato";
+    accent = "mauve";
   };
 }

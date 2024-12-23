@@ -1,4 +1,10 @@
 {...}: {
+  catppuccin.waybar = {
+    enable = true;
+    flavor = "macchiato";
+    mode = "prependImport";
+  };
+
   programs.waybar = {
     enable = true;
     style = ''
@@ -236,12 +242,6 @@
         color: @sapphire;
       }
     '';
-
-    catppuccin = {
-      enable = true;
-      flavor = "macchiato";
-      mode = "prependImport";
-    };
 
     settings = {
       top_bar = {

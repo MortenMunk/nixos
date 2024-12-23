@@ -11,6 +11,7 @@ let
 in
 {  
     wayland.windowManager.hyprland = {
+    xwayland.enable = true;
 		enable = true;
 		extraConfig = ''
 			bind = , Print, exec, grim -g "$(slurp)" - | wl-copy | dunstify "Screenshot of the region copied" -t 1000 # screenshot of a region 
@@ -166,7 +167,7 @@ in
 			];
 			
       windowrule = [
-				"opaque, brave"
+				"opaque, brave-browser"
 				"opaque, zathura"
 				"opaque, vesktop"
 			];

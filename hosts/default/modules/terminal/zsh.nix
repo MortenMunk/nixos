@@ -11,10 +11,6 @@
     enableCompletion = true;
     syntaxHighlighting = {
       enable = true;
-      catppuccin = {
-        enable = true;
-        flavor = "macchiato";
-      };
     };
     shellAliases = {
       cat = "${pkgs.bat}/bin/bat";
@@ -46,5 +42,10 @@
 
       theme = "kafeitu";
     };
+  };
+
+  catppuccin.zsh-syntax-highlighting = {
+    enable = true;
+    flavor = "macchiato";
   };
 }

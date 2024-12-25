@@ -102,7 +102,7 @@
   users.users.morten = {
     isNormalUser = true;
     description = "Morten";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
   
   home-manager = {
@@ -126,6 +126,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  virtualisation.docker.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -133,7 +135,8 @@
     obsidian
     networkmanagerapplet
     brightnessctl
-    mongodb-compass
+    docker-compose
+    lazydocker
   ];
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];

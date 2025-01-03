@@ -45,11 +45,19 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   
+  programs.uwsm = {
+    enable = true;
+  };
+
   programs.hyprland = {
     enable = true;
+    xwayland.enable = true;
+    withUWSM = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
+
+  programs.xwayland.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -150,17 +158,18 @@
     };
   };
 
-  #services.displayManager.sddm = {
-  #enable = true;
-  #package = pkgs.kdePackages.sddm;
-  #catppuccin = {
-  #enable = true;
-  #flavor = "macchiato";
-  #fontSize = "20";
-  #background = "/etc/nixos/wallpapers/login.png";
-  #loginBackground = true;
-  #};
-  #};
+  services.displayManager.sddm = {
+    enable = true;
+    package = pkgs.kdePackages.sddm;
+  };
+
+  catppuccin.sddm = {
+    enable = true;
+    flavor = "macchiato";
+    fontSize = "20";
+    background = "/etc/nixos/wallpapers/login.png";
+    loginBackground = true;
+  };
 
   # Flake config
   nix.settings = {

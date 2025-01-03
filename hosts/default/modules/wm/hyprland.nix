@@ -11,6 +11,7 @@ let
 in
 {  
     wayland.windowManager.hyprland = {
+    systemd.enable = false;
     xwayland.enable = true;
 		enable = true;
 		extraConfig = ''

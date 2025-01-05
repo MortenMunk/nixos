@@ -33,11 +33,12 @@
               };
               options = let
                 flakePath = "/etc/nixos";
-                getFlake = ''(builtins.getFlake "${flakePath}")'';
-              in rec {
-                nixos.expr = "${getFlake}.nixosConfigurations.default.options";
-                home_manager.expr = "${getFlake}.homeConfigurations.morten.options";
-                nixvim.expr = "${home_manager.expr}.programs.nixvim.getSubOption []";
+                getFlake = "(builtins.getFlake \"${flakePath}\")";
+                hm = "${getFlake}.homeConfigurations.\"morten@nixos\".options";
+              in {
+                nixos.expr = "${getFlake}.nixosConfigurations.nixos.options";
+                home-manager.expr = "${hm}";
+                nixvim.expr = "${hm}.programs.nixvim.type.getSubOptions []";
               };
             };
           };

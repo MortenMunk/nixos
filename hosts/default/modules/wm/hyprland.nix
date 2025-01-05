@@ -20,6 +20,11 @@ in
  		'';
 		settings = {
 			exec-once = ''${startupScript}/bin/start'';
+      
+      misc = {
+        disable_splash_rendering = true;
+        disable_hyprland_logo = true;
+      };
 
 			# MONITOR
       monitor = [

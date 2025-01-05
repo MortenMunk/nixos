@@ -1,4 +1,4 @@
-{
+{ pkgs, ...}: {
   programs.nixvim = {
     plugins = {
       lsp = {
@@ -26,19 +26,17 @@
           # NIX
           nixd = {
             enable = true;
-            settings = {
-              formatting.command = ["alejandra"];
-              nixpkgs = {
-                expr = "import <nixpkgs> {}";
-              };
-              options = let
-                flakePath = "/etc/nixos";
-                getFlake = "(builtins.getFlake \"${flakePath}\")";
-                hm = "${getFlake}.homeConfigurations.\"morten@nixos\".options";
+            settings = 
+              let 
+                flake = ''(builtins.getFlake "/etc/nixos")'';
+                system = ''''${builtsins.currentSystem}'';
               in {
-                nixos.expr = "${getFlake}.nixosConfigurations.nixos.options";
-                home-manager.expr = "${hm}";
-                nixvim.expr = "${hm}.programs.nixvim.type.getSubOptions []";
+              formatting.command = ["alejandra"];
+              nixpkgs.expr = "import ${flake}.inputs.nixpkgs {}";
+              options = rec {
+                nixos.expr = "${flake}.nixosConfigurations.nixos.options";
+                home-manager.expr = "${nixos.expr}.home-manager.users.type.getSubOptions [ ]";
+                nixvim.expr = "${flake}.packages.${system}.nvim.options";
               };
             };
           };

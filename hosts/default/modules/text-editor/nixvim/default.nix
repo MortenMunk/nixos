@@ -16,6 +16,7 @@
     ./plugins/conform.nix
     ./plugins/barbar.nix
     ./plugins/telescope.nix
+    ./plugins/fidget.nix
     #./plugins/statuscol.nix
     ./plugins/startup.nix
 	];

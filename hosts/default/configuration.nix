@@ -1,12 +1,15 @@
-{ pkgs, config, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./main-user.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  pkgs,
+  config,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./main-user.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -17,7 +20,11 @@
   # Enable networking
   networking = {
     networkmanager.enable = true;
-    wireless.userControlled.enable = true;
+    nameservers = [
+      "1.1.1.1"
+      "1.0.0.1"
+    ];
+    # wireless.userControlled.enable = true;
   };
 
   # Set your time zone.
@@ -40,11 +47,11 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.excludePackages = [ pkgs.xterm ];
-  
+  services.xserver.excludePackages = [pkgs.xterm];
+
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+
   programs.uwsm = {
     enable = true;
   };
@@ -61,8 +68,8 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-	layout = "dk";
-	variant = "";
+    layout = "dk";
+    variant = "";
   };
 
   # Configure console keymap
@@ -91,10 +98,8 @@
     #};
   };
 
-
   # Enabled to allow Hyprlock
   security.pam.services.hyprlock = {};
-
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -110,16 +115,16 @@
   users.users.morten = {
     isNormalUser = true;
     description = "Morten";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = ["networkmanager" "wheel" "docker"];
   };
-  
+
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     users.morten = {
       imports = [
         ./home.nix
         inputs.catppuccin.homeManagerModules.catppuccin
-      	inputs.nixvim.homeManagerModules.nixvim
+        inputs.nixvim.homeManagerModules.nixvim
       ];
     };
   };
@@ -150,11 +155,11 @@
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   nixpkgs.config.packageOverrides = pkgs: {
-	  colloid-icon-theme = pkgs.colloid-icon-theme.override { colorVariants = ["teal"]; };
-	  catppuccin-gtk = pkgs.catppuccin-gtk.override {
-		  accents = [ "teal" ]; # You can specify multiple accents here to output multiple themes 
-		  size = "standard";
-		  variant = "macchiato";
+    colloid-icon-theme = pkgs.colloid-icon-theme.override {colorVariants = ["teal"];};
+    catppuccin-gtk = pkgs.catppuccin-gtk.override {
+      accents = ["teal"]; # You can specify multiple accents here to output multiple themes
+      size = "standard";
+      variant = "macchiato";
     };
   };
 
@@ -174,8 +179,8 @@
   # Flake config
   nix.settings = {
     trusted-users = [config.users.users.morten.name];
-    
-    experimental-features = [ "nix-command" "flakes" ];
+
+    experimental-features = ["nix-command" "flakes"];
 
     builders-use-substitutes = true;
 
@@ -184,9 +189,8 @@
       "https://nix-community.cachix.org"
       "https://nixpkgs-unfree.cachix.org"
       "https://hyprland.cachix.org"
-
     ];
-    
+
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="

@@ -9,10 +9,10 @@
             ipc = "on";
             splash = false;
             preload = [
-                "/etc/nixos/wallpapers/bg.jpg"
+                "/etc/nixos/wallpapers/nixos.png"
             ];
             wallpaper = [
-                ", /etc/nixos/wallpapers/bg.jpg"
+                ", /etc/nixos/wallpapers/nixos.png"
             ];
         };
     };

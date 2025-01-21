@@ -1,9 +1,10 @@
 {pkgs, ...}: {
-    home.packages = with pkgs; [
-        dunst
-    ];
+  home.packages = with pkgs; [
+    libnotify
+  ];
 
-    services.dunst = {
-        enable = true;
-    };
+  services.dunst = {
+    enable = true;
+  };
 }
+

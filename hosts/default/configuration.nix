@@ -20,6 +20,7 @@
   # Enable networking
   networking = {
     networkmanager.enable = true;
+    # 127.7.7.6
     nameservers = [
       "1.1.1.1"
       "1.0.0.1"
@@ -60,8 +61,8 @@
     enable = true;
     xwayland.enable = true;
     withUWSM = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   programs.xwayland.enable = true;
@@ -102,7 +103,7 @@
   security.pam.services.hyprlock = {};
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

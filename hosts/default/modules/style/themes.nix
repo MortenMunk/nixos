@@ -1,15 +1,14 @@
 {pkgs, ...}: {
-
-	home.packages = with pkgs; [
-		numix-icon-theme-circle
-		colloid-icon-theme
-		catppuccin-gtk
-		catppuccin-kvantum
-		catppuccin-sddm
-		catppuccin
-		catppuccin-cursors.macchiatoTeal
-		catppuccin-qt5ct
-	];
+  home.packages = with pkgs; [
+    numix-icon-theme-circle
+    colloid-icon-theme
+    catppuccin-gtk
+    catppuccin-kvantum
+    catppuccin-sddm
+    catppuccin
+    catppuccin-cursors.macchiatoTeal
+    catppuccin-qt5ct
+  ];
 
   catppuccin.hyprland = {
     enable = true;
@@ -17,27 +16,28 @@
     accent = "mauve";
   };
 
-	home.sessionVariables = {
-		GTK_THEME = "catppuccin-frappe-blue-standard";
-	};
+  home.sessionVariables = {
+    GTK_THEME = "catppuccin-frappe-blue-standard";
+  };
 
-	home.pointerCursor = {
-		name = "catppuccin-macchiato-teal-cursors";
-		package = pkgs.catppuccin-cursors.macchiatoTeal;
-	};
+  home.pointerCursor = {
+    name = "catppuccin-macchiato-teal-cursors";
+    package = pkgs.catppuccin-cursors.macchiatoTeal;
+    size = 32;
+  };
 
-	catppuccin = {
-		enable = true;
-		flavor = "macchiato";	
-	};
+  catppuccin = {
+    enable = true;
+    flavor = "macchiato";
+  };
 
-	catppuccin.gtk = {
-		enable = true;
-		flavor = "macchiato";
-	};
+  catppuccin.gtk = {
+    enable = true;
+    flavor = "macchiato";
+  };
 
-	catppuccin.kvantum = {
-		enable = true;
-		flavor = "macchiato";
-	};
+  catppuccin.kvantum = {
+    enable = true;
+    flavor = "macchiato";
+  };
 }

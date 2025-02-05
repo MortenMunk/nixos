@@ -1,9 +1,9 @@
-{ pkgs, ...}: {
+{pkgs, ...}: {
   programs.nixvim = {
     plugins = {
       lsp = {
         enable = true;
-        
+
         keymaps = {
           silent = true;
           diagnostic = {
@@ -26,11 +26,10 @@
           # NIX
           nixd = {
             enable = true;
-            settings = 
-              let 
-                flake = ''(builtins.getFlake "/etc/nixos")'';
-                system = ''''${builtsins.currentSystem}'';
-              in {
+            settings = let
+              flake = ''(builtins.getFlake "/etc/nixos")'';
+              system = ''''${builtsins.currentSystem}'';
+            in {
               formatting.command = ["alejandra"];
               nixpkgs.expr = "import ${flake}.inputs.nixpkgs {}";
               options = rec {
@@ -46,7 +45,10 @@
             installGhc = false;
           };
           # TYPESCRIPT/JAVASCRIPT
-          ts_ls.enable=true;
+          ts_ls.enable = true;
+
+          # C & C++
+          clangd.enable = true;
         };
       };
     };

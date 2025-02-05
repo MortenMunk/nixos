@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.nixvim = {
     extraPackages = with pkgs; [
       ormolu
@@ -23,6 +23,8 @@
           toml = ["taplo"];
           haskell = ["ormolu"];
           javascript = ["biome"];
+          cpp = ["clang-format"];
+          c = ["clang-format"];
         };
       };
     };

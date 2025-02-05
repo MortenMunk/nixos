@@ -160,6 +160,12 @@ in {
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
 
+        # SOUND
+        ",XF86AudioRaiseVolume, exec, pamixer -i 5"
+        ",XF86AudioLowerVolume, exec, pamixer -d 5"
+        ",XF86AudioMute, exec, pamixer -t"
+
+        # BRIGHTNESS
         ",XF86MonBrightnessUp, exec, brightnessctl set +5%"
         ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
       ];
@@ -175,6 +181,7 @@ in {
         "opaque, vesktop"
         "opaque, libreoffice-writer"
         "opaque, libreoffice-impress"
+        "tile, org-gjt-sp-jedit-jEdit"
       ];
     };
   };

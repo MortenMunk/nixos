@@ -114,7 +114,7 @@ in {
         "$mod, C, killactive"
         "$mod, M, exit"
         "$mod, E, exec, nautilus"
-        "$mod, V, togglefloating"
+        "$mod, F, togglefloating"
         "$mod, R, exec, rofi -show drun -show-icons"
         "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         "$mod, P, pseudo, #dwindle"

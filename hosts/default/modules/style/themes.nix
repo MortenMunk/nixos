@@ -8,7 +8,15 @@
     catppuccin
     catppuccin-cursors.macchiatoTeal
     catppuccin-qt5ct
+    hyprcursor
   ];
+
+  gtk = {
+    enable = true;
+    cursorTheme.package = pkgs.catppuccin-cursors.macchiatoTeal;
+    cursorTheme.name = "catppuccin-macchiato-teal-cursors";
+    cursorTheme.size = 18;
+  };
 
   catppuccin.hyprland = {
     enable = true;
@@ -16,27 +24,15 @@
     accent = "mauve";
   };
 
-  home.sessionVariables = {
-    GTK_THEME = "catppuccin-frappe-blue-standard";
-  };
-
   home.pointerCursor = {
     name = "catppuccin-macchiato-teal-cursors";
     package = pkgs.catppuccin-cursors.macchiatoTeal;
     size = 32;
+    x11.enable = true;
+    gtk.enable = true;
   };
 
   catppuccin = {
-    enable = true;
-    flavor = "macchiato";
-  };
-
-  catppuccin.gtk = {
-    enable = true;
-    flavor = "macchiato";
-  };
-
-  catppuccin.kvantum = {
     enable = true;
     flavor = "macchiato";
   };

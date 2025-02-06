@@ -114,7 +114,7 @@ in {
         "$mod, C, killactive"
         "$mod, M, exit"
         "$mod, E, exec, nautilus"
-        #"$mod, V, togglefloating"
+        "$mod, V, togglefloating"
         "$mod, R, exec, rofi -show drun -show-icons"
         "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         "$mod, P, pseudo, #dwindle"
@@ -181,7 +181,8 @@ in {
         "opaque, vesktop"
         "opaque, libreoffice-writer"
         "opaque, libreoffice-impress"
-        "tile, org-gjt-sp-jedit-jEdit"
+        #"tile, org-gjt-sp-jedit-jEdit"
+        #"tile, isabelle-jedit-JEdit_Main"
       ];
     };
   };

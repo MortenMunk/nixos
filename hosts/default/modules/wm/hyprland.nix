@@ -44,6 +44,10 @@ in {
         sensitivity = 0;
       };
 
+      ecosystem = {
+        no_donation_nag = true;
+      };
+
       # GENERAL
       general = {
         gaps_in = 5;

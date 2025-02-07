@@ -25,6 +25,7 @@
           javascript = ["biome"];
           cpp = ["clang-format"];
           c = ["clang-format"];
+          go = ["gofmt"];
         };
       };
     };

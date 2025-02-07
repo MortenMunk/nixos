@@ -52,6 +52,9 @@
 
           # Coq
           coq_lsp.enable = true;
+
+          # GO
+          gopls.enable = true;
         };
       };
     };

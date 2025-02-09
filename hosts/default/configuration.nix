@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   config,
   inputs,
   ...
@@ -55,7 +56,15 @@
 
   programs.uwsm = {
     enable = true;
+    waylandCompositors.hyprland = {
+      binPath = "/run/current-system/sw/bin/Hyprland";
+      prettyName = "Hyprland";
+    };
   };
+
+  environment.variables.EDITOR = lib.mkOverride 900 "nvim";
+  environment.variables.VISUAL = lib.mkOverride 900 "nvim";
+  environment.variables.SUDO_EDITOR = lib.mkOverride 900 "nvim";
 
   programs.hyprland = {
     enable = true;
@@ -81,23 +90,23 @@
     enable = true;
   };
 
-  services.tlp = {
-    enable = true;
-    #settings = {
-    #TLP_DEFAULT_MODE = "BAT";
-    #TLP_PERSISTENT_DEFAULT = 1;
-    #CPU_SCALING_GOVERNOR_ON_AC = "performance";
-    #CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+  #services.tlp = {
+  #enable = true;
+  #settings = {
+  #TLP_DEFAULT_MODE = "BAT";
+  #TLP_PERSISTENT_DEFAULT = 1;
+  #CPU_SCALING_GOVERNOR_ON_AC = "performance";
+  #CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-    #CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-    #CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+  #CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+  #CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
 
-    #CPU_MIN_PERF_ON_AC = 0;
-    #CPU_MAX_PERF_ON_AC = 100;
-    #CPU_MIN_PERF_ON_BAT = 0;
-    #CPU_MAX_PERF_ON_BAT = 20;
-    #};
-  };
+  #CPU_MIN_PERF_ON_AC = 0;
+  #CPU_MAX_PERF_ON_AC = 100;
+  #CPU_MIN_PERF_ON_BAT = 0;
+  #CPU_MAX_PERF_ON_BAT = 20;
+  #};
+  #};
 
   # Enabled to allow Hyprlock
   security.pam.services.hyprlock = {};
@@ -153,15 +162,6 @@
   ];
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
-
-  #nixpkgs.config.packageOverrides = pkgs: {
-  #  colloid-icon-theme = pkgs.colloid-icon-theme.override {colorVariants = ["teal"];};
-  #catppuccin-gtk = pkgs.catppuccin-gtk.override {
-  #    accents = ["teal"]; # You can specify multiple accents here to output multiple themes
-  #    size = "standard";
-  #    variant = "macchiato";
-  #  };
-  #};
 
   services.displayManager.sddm = {
     enable = true;

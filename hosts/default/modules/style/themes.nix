@@ -1,14 +1,11 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     numix-icon-theme-circle
-    colloid-icon-theme
-    catppuccin-gtk
     catppuccin-kvantum
     catppuccin-sddm
     catppuccin
     catppuccin-cursors.macchiatoTeal
     catppuccin-qt5ct
-    hyprcursor
   ];
 
   gtk = {

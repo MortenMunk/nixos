@@ -70,8 +70,6 @@
     enable = true;
     xwayland.enable = true;
     withUWSM = true;
-    #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   programs.xwayland.enable = true;
@@ -90,24 +88,6 @@
     enable = true;
   };
 
-  #services.tlp = {
-  #enable = true;
-  #settings = {
-  #TLP_DEFAULT_MODE = "BAT";
-  #TLP_PERSISTENT_DEFAULT = 1;
-  #CPU_SCALING_GOVERNOR_ON_AC = "performance";
-  #CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-  #CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-  #CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-
-  #CPU_MIN_PERF_ON_AC = 0;
-  #CPU_MAX_PERF_ON_AC = 100;
-  #CPU_MIN_PERF_ON_BAT = 0;
-  #CPU_MAX_PERF_ON_BAT = 20;
-  #};
-  #};
-
   # Enabled to allow Hyprlock
   security.pam.services.hyprlock = {};
 
@@ -121,7 +101,6 @@
     pulse.enable = true;
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.morten = {
     isNormalUser = true;
     description = "Morten";
@@ -138,20 +117,16 @@
     };
   };
 
-  # Set default shell
   environment.shells = with pkgs; [
     zsh
   ];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   virtualisation.docker.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     nwg-look
     obsidian
@@ -162,6 +137,14 @@
   ];
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    catppuccin-gtk = pkgs.catppuccin-gtk.override {
+      accents = ["teal"];
+      size = "standard";
+      variant = "macchiato";
+    };
+  };
 
   services.displayManager.sddm = {
     enable = true;
@@ -176,7 +159,6 @@
     loginBackground = true;
   };
 
-  # Flake config
   nix.settings = {
     trusted-users = [config.users.users.morten.name];
 

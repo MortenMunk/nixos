@@ -6,6 +6,7 @@
     catppuccin
     catppuccin-cursors.macchiatoTeal
     catppuccin-qt5ct
+    catppuccin-gtk
   ];
 
   gtk = {

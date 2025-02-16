@@ -139,14 +139,6 @@
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    catppuccin-gtk = pkgs.catppuccin-gtk.override {
-      accents = ["teal"];
-      size = "standard";
-      variant = "macchiato";
-    };
-  };
-
   services.displayManager.sddm = {
     enable = true;
     package = pkgs.kdePackages.sddm;

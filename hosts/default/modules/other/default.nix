@@ -1,6 +1,6 @@
 {
   imports = [
     ./direnv.nix
-    ./discord.nix
+    ./discord/discord.nix
   ];
 }

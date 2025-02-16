@@ -20,6 +20,8 @@
     nautilus
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   home.sessionVariables = {
     XDG_CURRENT_DESKTOP = "Hyprland";
     ROFI_WAYLAND = "1";

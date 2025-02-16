@@ -118,8 +118,8 @@ in {
         "$mod, M, exit"
         "$mod, E, exec, nautilus"
         "$mod, F, togglefloating"
-        "$mod, R, exec, wofi -d --show drun"
-        "$mod, V, exec, cliphist list | wofi -dmenu | cliphist decode | wl-copy"
+        "$mod, R, exec, rofi -show drun"
+        "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         "$mod, P, pseudo, #dwindle"
         "$mod, J, togglesplit, #dwindle"
 
@@ -184,8 +184,6 @@ in {
         "opaque, vesktop"
         "opaque, libreoffice-writer"
         "opaque, libreoffice-impress"
-        #"tile, org-gjt-sp-jedit-jEdit"
-        #"tile, isabelle-jedit-JEdit_Main"
       ];
     };
   };

@@ -2,7 +2,7 @@
   imports = [
     ./btop.nix
     ./clip.nix
-    ./wofi.nix
+    ./rofi.nix
     ./git.nix
     ./fastfetch.nix
     ./dunst.nix

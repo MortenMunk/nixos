@@ -14,9 +14,4 @@
       };
     };
   };
-
-  catppuccin.zellij = {
-    enable = true;
-    flavor = "macchiato";
-  };
 }

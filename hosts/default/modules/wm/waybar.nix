@@ -1,9 +1,19 @@
-{...}: {
-  catppuccin.waybar = {
-    enable = true;
-    flavor = "macchiato";
-    mode = "prependImport";
-  };
+{...}: let
+  base = "#282828";
+  surface = "#504945";
+  surface1 = "#665c54";
+  subtext = "#d5c4a1";
+  text = "#fbf1c7";
+  rd = "#fb4934";
+  orng = "#fe8019";
+  yllw = "#fabd2f";
+  grn = "#b8bb26";
+  grn2 = "#8ec07c";
+  blu = "#83a598";
+  pnk = "#d3869b";
+  orng2 = "#d65d0e";
+in {
+  stylix.targets.waybar.enable = false;
 
   programs.waybar = {
     enable = true;
@@ -13,8 +23,8 @@
       }
 
       window#waybar {
-        background-color: alpha(@base, 0.7);
-        border-bottom: solid alpha(@surface1, 0.7) 2px;
+        background-color: alpha(${base}, 0.7);
+        border-bottom: solid alpha(${surface}, 0.7) 2px;
       }
 
       #user {
@@ -26,30 +36,30 @@
       }
 
       #keyboard-state label.locked {
-        color: @yellow;
+        color: ${yllw};
       }
 
       #keyboard-state label {
-        color: @subtext0;
+        color: ${subtext};
       }
 
       #custom-os_button {
-        color: @sky;
+        color: ${blu};
         font-size: 24px;
         padding-left: 12px;
         padding-right: 12px;
       }
 
       #workspaces button.active {
-        color: @peach;
+        color: ${orng};
       }
 
       #workspaces button {
-        color: @text;
+        color: ${text};
       }
 
       #submap {
-        background-color: alpha(@surface1, 0.7);
+        background-color: alpha(${surface1}, 0.7);
         border-radius: 15px;
         padding-left: 15px;
         padding-right: 15px;
@@ -61,45 +71,45 @@
 
       .modules-center {
         font-weight: bold;
-        background-color: alpha(@surface1, 0.7);
-        color: @peach;
+        background-color: alpha(${surface1}, 0.7);
+        color: ${orng};
         border-radius: 15px;
         padding-left: 20px;
         padding-right: 20px;
         margin-top: 5px;
         margin-bottom: 5px;
       }
-      
+
       .modules-right {
         margin-right: 5px;
       }
 
       #custom-separator {
-        color: @green;
+        color: ${grn};
       }
 
       #custom-separator_dot {
-        color: @green;
+        color: ${grn};
       }
 
       #clock.time {
-        color: @flamingo;
+        color: ${pnk};
       }
 
       #clock.week {
-        color: @sapphire;
+        color: ${grn2};
       }
 
       #clock.month {
-        color: @sapphire;
+        color: ${grn2};
       }
 
       #clock.calendar {
-        color: @mauve;
+        color: ${orng2};
       }
 
       #tray {
-        background-color: alpha(@surface1, 0.7);
+        background-color: alpha(${surface1}, 0.7);
         border-radius: 15px;
         padding-left: 15px;
         padding-right: 15px;
@@ -108,138 +118,138 @@
       }
 
       #tray.needs-attention {
-        background-color: alpha(@maroon, 0.7);
+        background-color: alpha(${rd}, 0.7);
         border-radius: 15px;
       }
 
       #cpu {
-        background-color: alpha(@surface1, 0.7);
+        background-color: alpha(${surface1}, 0.7);
         border-radius: 15px;
         padding-left: 15px;
         padding-right: 15px;
         margin-top: 5px;
         margin-bottom: 5px;
-        color: @sapphire;
+        color: ${grn};
       }
 
       #cpu.low {
-        color: @rosewater;
+        color: ${grn2};
       }
 
       #cpu.lower-medium {
-        color: @yellow;
+        color: ${yllw};
       }
 
       #cpu.medium {
-        color: @peach;
+        color: ${orng};
       }
 
       #cpu.upper-medium {
-        color: @maroon;
+        color: ${orng2};
       }
 
       #cpu.high {
-        color: @red;
+        color: ${rd};
       }
 
       #memory {
-        background-color: alpha(@surface1, 0.7);
+        background-color: alpha(${surface1}, 0.7);
         border-radius: 15px;
         padding-left: 15px;
         padding-right: 15px;
         margin-top: 5px;
         margin-bottom: 5px;
-        color: @sapphire;
+        color: ${grn};
       }
 
       #memory.low {
-        color: @rosewater;
+        color: ${grn2};
       }
 
       #memory.lower-medium {
-        color: @yellow;
+        color: ${yllw};
       }
 
       #memory.medium {
-        color: @peach;
+        color: ${orng};
       }
 
       #memory.upper-medium {
-        color: @maroon;
+        color: ${orng2};
       }
 
       #memory.high {
-        color: @red;
+        color: ${rd};
       }
 
       #disk {
-        background-color: alpha(@surface1, 0.7);
+        background-color: alpha(${surface1}, 0.7);
         border-radius: 15px;
         padding-left: 15px;
         padding-right: 15px;
         margin-top: 5px;
         margin-bottom: 5px;
-        color: @sapphire;
+        color: ${grn};
       }
 
       #disk.low {
-        color: @rosewater;
+        color: ${grn2};
       }
 
       #disk.lower-medium {
-        color: @yellow;
+        color: ${yllw};
       }
 
       #disk.medium {
-        color: @peach;
+        color: ${orng}
       }
 
       #disk.upper-medium {
-        color: @maroon;
+        color: ${orng2};
       }
 
       #disk.high {
-        color: @red;
+        color: ${rd};
       }
 
       #battery {
-        background-color: alpha(@surface1, 0.7);
+        background-color: alpha(${surface1}, 0.7);
         border-radius: 15px;
         padding-left: 15px;
         padding-right: 15px;
         margin-top: 5px;
         margin-bottom: 5px;
-        color: @teal;
+        color: ${grn};
       }
 
       #battery.low {
-        color: @red;
+        color: ${rd};
       }
 
       #battery.lower-medium {
-        color: @maroon;
+        color: ${orng2};
       }
 
       #battery.medium {
-        color: @peach;
+        color: ${orng};
       }
 
       #battery.upper-medium {
-        color: @flamingo;
+        color: ${yllw};
       }
 
       #battery.high {
-        color: @rosewater;
+        color: ${grn};
       }
 
       #pulseaudio {
-        background-color: alpha(@surface1, 0.7);
+        background-color: alpha(${surface1}, 0.7);
         border-radius: 15px;
         padding-left: 15px;
         padding-right: 15px;
         margin-top: 5px;
         margin-bottom: 5px;
-        color: @sapphire;
+        color: ${blu};
       }
     '';
 
@@ -248,24 +258,24 @@
         layer = "top";
         position = "top";
         height = 36;
-        spacing = 4; 
+        spacing = 4;
         modules-left = [
           "custom/os_button"
           "hyprland/workspaces"
           "hyprland/submap"
         ];
         modules-center = [
-          "clock#time" 
+          "clock#time"
           "custom/separator"
           "clock#calendar"
         ];
-        modules-right = [ 
-            "tray" 
-            "cpu" 
-            "memory" 
-            "disk" 
-            "battery" 
-            "pulseaudio" 
+        modules-right = [
+          "tray"
+          "cpu"
+          "memory"
+          "disk"
+          "battery"
+          "pulseaudio"
         ];
 
         "custom/os_button" = {
@@ -273,7 +283,7 @@
         };
 
         "hyprland/workspaces" = {
-          on-click = "activate"; 
+          on-click = "activate";
           format = "{icon}";
           format-icons = {
             active = "";
@@ -289,7 +299,6 @@
           format = "<span color='#a6da95'>Mode:</span> {}";
           tooltip = false;
         };
-
 
         "custom/separator" = {
           format = "|";
@@ -339,7 +348,7 @@
             };
           };
         };
-        
+
         cpu = {
           format = "󰻠 {usage}%";
           states = {
@@ -351,7 +360,7 @@
           };
           on-click = "kitty btop";
         };
-        
+
         memory = {
           format = "  {percentage}%";
           tooltip-format = "Main: ({used} GiB/{total} GiB)({percentage}%), available {avail} GiB";
@@ -366,7 +375,7 @@
         };
 
         disk = {
-          format = "󰋊 {percentage_used}%";  
+          format = "󰋊 {percentage_used}%";
           tooltip-format = "({used}/{total})({percentage_used}%) in '{path}', available {free}({percentage_free}%)";
           states = {
             high = 90;
@@ -390,7 +399,7 @@
           format-charging = "󱐋{icon}{capacity}%";
           format-plugged = "󰚥{icon}{capacity}%";
           format-time = "{H} h {M} min";
-          format-icons = [ 
+          format-icons = [
             "󱃍 "
             "󰁺 "
             "󰁻 "
@@ -401,7 +410,7 @@
             "󰂀 "
             "󰂁 "
             "󰂂 "
-            "󰁹 " 
+            "󰁹 "
           ];
           tooltip-format = "{timeTo}";
         };

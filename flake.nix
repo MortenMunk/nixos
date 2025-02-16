@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    catppuccin.url = "github:catppuccin/nix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,25 +13,16 @@
       submodules = true;
     };
     nixvim.url = "github:MortenMunk/nixvim";
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    catppuccin,
-    nixvim,
-    ...
-  } @ inputs: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
+  outputs = {nixpkgs, ...} @ inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default
-        catppuccin.nixosModules.catppuccin
+        inputs.stylix.nixosModules.stylix
       ];
     };
   };

@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-
   home.packages = with pkgs; [
     bat
     eza
@@ -36,16 +35,11 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
-        "git" 
+        "git"
         "direnv"
-	    ];
+      ];
 
       theme = "kafeitu";
     };
-  };
-
-  catppuccin.zsh-syntax-highlighting = {
-    enable = true;
-    flavor = "macchiato";
   };
 }

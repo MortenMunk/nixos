@@ -53,8 +53,8 @@ in {
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "rgb(268bd2)"; # rgb(6272a4) or rgb(44475a)
-        "col.inactive_border" = "rgb(1a1a1a)";
+        #"col.active_border" = "rgb(268bd2)"; # rgb(6272a4) or rgb(44475a)
+        #"col.inactive_border" = "rgb(1a1a1a)";
         layout = "dwindle";
       };
 
@@ -74,7 +74,6 @@ in {
           enabled = false;
           range = 15;
           ignore_window = true;
-          color = "rgba(1E202966)";
           render_power = 3;
         };
       };
@@ -119,8 +118,8 @@ in {
         "$mod, M, exit"
         "$mod, E, exec, nautilus"
         "$mod, F, togglefloating"
-        "$mod, R, exec, rofi -show drun -show-icons"
-        "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+        "$mod, R, exec, wofi -d --show drun"
+        "$mod, V, exec, cliphist list | wofi -dmenu | cliphist decode | wl-copy"
         "$mod, P, pseudo, #dwindle"
         "$mod, J, togglesplit, #dwindle"
 

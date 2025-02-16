@@ -1,5 +1,5 @@
 {
-  programs.yazi = {
+  programs.fastfetch = {
     enable = true;
   };
 }

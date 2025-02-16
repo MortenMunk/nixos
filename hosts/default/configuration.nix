@@ -9,6 +9,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./main-user.nix
+    ./stylix.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -112,7 +113,7 @@
     users.morten = {
       imports = [
         ./home.nix
-        inputs.catppuccin.homeManagerModules.catppuccin
+        ./stylix.nix
       ];
     };
   };
@@ -151,13 +152,13 @@
     package = pkgs.kdePackages.sddm;
   };
 
-  catppuccin.sddm = {
-    enable = true;
-    flavor = "macchiato";
-    fontSize = "20";
-    background = "/etc/nixos/wallpapers/login.png";
-    loginBackground = true;
-  };
+  #catppuccin.sddm = {
+  #  enable = true;
+  #  flavor = "macchiato";
+  #  fontSize = "20";
+  #  background = "/etc/nixos/wallpapers/login.png";
+  #  loginBackground = true;
+  #};
 
   nix.settings = {
     trusted-users = [config.users.users.morten.name];

@@ -5,7 +5,7 @@
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   imports = [
-    ./modules/style/themes.nix
+    #./modules/style/themes.nix
     ./modules/file-managers/media.nix
     ./modules/text-editor/default.nix
     ./modules/style/fonts.nix
@@ -17,7 +17,6 @@
   ];
 
   home.packages = with pkgs; [
-    neofetch
     nautilus
   ];
 

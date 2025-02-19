@@ -3,6 +3,6 @@
     ./nixvim.nix
     ./office.nix
     ./vscodium.nix
-    #./obsidian.nix
+    ./obsidian.nix
   ];
 }

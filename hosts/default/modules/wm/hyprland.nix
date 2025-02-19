@@ -2,7 +2,6 @@
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
     ${pkgs.hypridle}/bin/hypridle &
-    ${pkgs.hyprpaper}/bin/hyprpaper &
     wl-paste --type text --watch cliphist store &
     wl-paste --type image --watch cliphist store &
     nm-applet --indicator &
@@ -16,7 +15,10 @@ in {
       	bind = SUPER, Print, exec, grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | dunstify "Screenshot of whole screen saved" -t 1000 # screenshot of the whole screen
     '';
     settings = {
-      exec-once = ''${startupScript}/bin/start'';
+      exec-once = [
+        "${startupScript}/bin/start"
+        "$HOME/.local/share/scripts/hyprland-bitwarden-resize.sh"
+      ];
 
       misc = {
         disable_splash_rendering = true;
@@ -180,10 +182,14 @@ in {
 
       windowrule = [
         "opaque, brave-browser"
+        "opaque, librewolf"
         "opaque, zathura"
-        "opaque, vesktop"
         "opaque, libreoffice-writer"
         "opaque, libreoffice-impress"
+      ];
+
+      windowrulev2 = [
+        "suppressevent maximize, class:^(librewolf)$"
       ];
     };
   };

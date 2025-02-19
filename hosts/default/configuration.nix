@@ -87,6 +87,17 @@
   # Power management
   powerManagement = {
     enable = true;
+    powertop.enable = true;
+  };
+
+  # Kill out of memory processes
+  services = {
+    auto-cpufreq.enable = true;
+    earlyoom = {
+      enable = true;
+      enableNotifications = true;
+      freeMemThreshold = 4;
+    };
   };
 
   # Enabled to allow Hyprlock
@@ -129,8 +140,6 @@
   virtualisation.docker.enable = true;
 
   environment.systemPackages = with pkgs; [
-    nwg-look
-    obsidian
     networkmanagerapplet
     brightnessctl
     docker-compose
@@ -143,14 +152,6 @@
     enable = true;
     package = pkgs.kdePackages.sddm;
   };
-
-  #catppuccin.sddm = {
-  #  enable = true;
-  #  flavor = "macchiato";
-  #  fontSize = "20";
-  #  background = "/etc/nixos/wallpapers/login.png";
-  #  loginBackground = true;
-  #};
 
   nix.settings = {
     trusted-users = [config.users.users.morten.name];

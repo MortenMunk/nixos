@@ -21,14 +21,13 @@ I use this setup on my old Asus laptop, and I consider it stable—it has reliab
 | **Notification** | Dunst |
 | **Lock** | Hyprlock |
 | **Idle** | Hypridle |
-| **Wallpaper** | Hyprpaper |
 | **Editor** | Nixvim |
 | **Display Manager** | SDDM |
 | **Office** | LibreOffice |
 | **Navigation** | Zoxide |
 | **File Manager** | Yazi |
 | **App Launcher** | Rofi-wayland |
-| **Browser** | Brave |
+| **Browser** | Librewolf |
 | **Media Player** | Mpv |
 | **Doc Reader** | Zathura |
 | **Fetch** | FastFetch |

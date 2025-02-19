@@ -144,6 +144,7 @@
     brightnessctl
     docker-compose
     lazydocker
+    sddm-astronaut
   ];
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
@@ -151,6 +152,9 @@
   services.displayManager.sddm = {
     enable = true;
     package = pkgs.kdePackages.sddm;
+    theme = "sddm-astronaut-theme";
+    extraPackages = with pkgs; [sddm-astronaut];
+    wayland.enable = true;
   };
 
   nix.settings = {

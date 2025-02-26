@@ -181,6 +181,8 @@ in {
       ];
 
       windowrule = [
+        "opaque, Emulator"
+        "float, Emulator"
         "opaque, brave-browser"
         "opaque, librewolf"
         "opaque, zathura"

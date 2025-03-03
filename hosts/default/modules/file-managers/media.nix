@@ -1,14 +1,11 @@
 {pkgs, ...}: {
-    home.packages = with pkgs; [
-        zathura
-        imv
-        mpv
-	unzip
-    ];
+  home.packages = with pkgs; [
+    unzip
+  ];
 
-    programs = {
-        zathura.enable = true;
-        imv.enable = true;
-        mpv.enable = true;
-    };
+  programs = {
+    zathura.enable = true;
+    imv.enable = true;
+    mpv.enable = true;
+  };
 }

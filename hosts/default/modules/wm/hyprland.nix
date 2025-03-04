@@ -55,8 +55,6 @@ in {
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        #"col.active_border" = "rgb(268bd2)"; # rgb(6272a4) or rgb(44475a)
-        #"col.inactive_border" = "rgb(1a1a1a)";
         layout = "dwindle";
       };
 

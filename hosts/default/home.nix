@@ -12,7 +12,6 @@
     ./modules/system/default.nix
     ./modules/terminal/default.nix
     ./modules/browser/brave.nix
-    ./modules/browser/librewolf.nix
     ./modules/other/default.nix
   ];
 

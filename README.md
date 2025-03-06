@@ -27,7 +27,7 @@ I use this setup on my old Asus laptop, and I consider it stable—it has reliab
 | **Navigation** | Zoxide |
 | **File Manager** | Yazi |
 | **App Launcher** | Rofi-wayland |
-| **Browser** | Librewolf |
+| **Browser** | Brave |
 | **Media Player** | Mpv |
 | **Doc Reader** | Zathura |
 | **Fetch** | FastFetch |

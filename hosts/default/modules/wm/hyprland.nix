@@ -17,7 +17,7 @@ in {
     settings = {
       exec-once = [
         "${startupScript}/bin/start"
-        "$HOME/.local/share/scripts/hyprland-bitwarden-resize.sh"
+        # "$HOME/.local/share/scripts/hyprland-bitwarden-resize.sh"
       ];
 
       misc = {

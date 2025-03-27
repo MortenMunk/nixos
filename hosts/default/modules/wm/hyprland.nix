@@ -179,16 +179,13 @@ in {
       ];
 
       windowrule = [
-        "opaque, Emulator"
-        "float, Emulator"
-        "opaque, brave-browser"
-        "opaque, librewolf"
-        "opaque, zathura"
-        "opaque, libreoffice-writer"
-        "opaque, libreoffice-impress"
-      ];
-
-      windowrulev2 = [
+        "opaque, class:^(Emulator)$"
+        "float, class:^(Emulator)$"
+        "opaque, class:^(brave-browser)$"
+        "opaque, class:^(librewolf)$"
+        "opaque, class:^(zathura)$"
+        "opaque, class:^(libreoffice-writer)$"
+        "opaque, class:^(libreoffice-impress)$"
         "suppressevent maximize, class:^(librewolf)$"
       ];
     };

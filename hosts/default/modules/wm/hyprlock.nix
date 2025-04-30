@@ -1,4 +1,6 @@
-{...}: {
+{...}: let
+  blu = "rgb(131, 165, 152)";
+in {
   programs.hyprlock = {
     enable = true;
     settings = {
@@ -14,6 +16,7 @@
           position = "0, -100";
           halign = "center";
           valign = "top";
+          color = "${blu}";
         }
         {
           # DAY - MONTH - YEAR
@@ -22,6 +25,7 @@
           position = "0, -150";
           halign = "center";
           valign = "top";
+          color = "${blu}";
         }
         {
           # TIME
@@ -30,6 +34,7 @@
           position = "0, 100";
           halign = "center";
           valign = "bottom";
+          color = "${blu}";
         }
       ];
     };

@@ -2,7 +2,7 @@
   rd = "#fb4934";
   orng = "#fe8019";
   blu = "#83a598";
-  blu2 = "#458588";
+  blu2 = "#8ec07c";
   orng2 = "#d65d0e";
   border_width = "2px";
 in {

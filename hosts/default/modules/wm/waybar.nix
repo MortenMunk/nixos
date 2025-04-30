@@ -1,17 +1,10 @@
 {...}: let
-  base = "#282828";
-  surface = "#504945";
-  surface1 = "#665c54";
-  subtext = "#d5c4a1";
-  text = "#fbf1c7";
   rd = "#fb4934";
   orng = "#fe8019";
-  yllw = "#fabd2f";
-  grn = "#b8bb26";
-  grn2 = "#8ec07c";
   blu = "#83a598";
-  pnk = "#d3869b";
+  blu2 = "#458588";
   orng2 = "#d65d0e";
+  border_width = "2px";
 in {
   stylix.targets.waybar.enable = false;
 
@@ -23,98 +16,70 @@ in {
       }
 
       window#waybar {
-        background-color: alpha(${base}, 0.7);
-        border-bottom: solid alpha(${surface}, 0.7) 2px;
-      }
-
-      #user {
-        padding-left: 10px;
-      }
-
-      #language {
-        padding-left: 15px;
-      }
-
-      #keyboard-state label.locked {
-        color: ${yllw};
-      }
-
-      #keyboard-state label {
-        color: ${subtext};
+        background-color: rgba(0,0,0,0);
       }
 
       #custom-os_button {
+        border: ${border_width} solid ${blu};
+        border-radius: 5px;
         color: ${blu};
         font-size: 24px;
-        padding-left: 12px;
+        padding-left: 6px;
         padding-right: 12px;
       }
 
+      #workspaces {
+        border-radius: 5px;
+        border: ${border_width} solid ${blu};
+      }
+
       #workspaces button.active {
-        color: ${orng};
+        color: ${blu2};
       }
 
       #workspaces button {
-        color: ${text};
+        color: ${blu};
       }
 
-      #submap {
-        background-color: alpha(${surface1}, 0.7);
-        border-radius: 15px;
-        padding-left: 15px;
-        padding-right: 15px;
-        margin-left: 20px;
-        margin-right: 20px;
+      .modules-left {
         margin-top: 5px;
-        margin-bottom: 5px;
+        margin-left: 10px;
       }
 
       .modules-center {
+        margin-top: 5px;
         font-weight: bold;
-        background-color: alpha(${surface1}, 0.7);
-        color: ${orng};
-        border-radius: 15px;
+        background-color: rgba(0,0,0,0);
+        color: ${blu};
+        border-radius: 5px;
+        border: ${border_width} solid ${blu};
         padding-left: 20px;
         padding-right: 20px;
-        margin-top: 5px;
-        margin-bottom: 5px;
       }
 
       .modules-right {
-        margin-right: 5px;
+        margin-top: 5px;
+        margin-right: 10px;
+        background-color: rgba(0,0,0,0);
       }
 
       #custom-separator {
-        color: ${grn};
-      }
-
-      #custom-separator_dot {
-        color: ${grn};
+        color: ${blu};
       }
 
       #clock.time {
-        color: ${pnk};
-      }
-
-      #clock.week {
-        color: ${grn2};
-      }
-
-      #clock.month {
-        color: ${grn2};
+        color: ${blu};
       }
 
       #clock.calendar {
-        color: ${orng2};
+        color: ${blu};
       }
 
       #tray {
-        background-color: alpha(${surface1}, 0.7);
-        border-radius: 15px;
+        border: ${border_width} solid ${blu};
+        border-radius: 5px ;
         padding-left: 15px;
         padding-right: 15px;
-        margin-top: 5px;
-        margin-bottom: 5px;
       }
 
       #tray.needs-attention {
@@ -123,21 +88,19 @@ in {
       }
 
       #cpu {
-        background-color: alpha(${surface1}, 0.7);
-        border-radius: 15px;
+        border: ${border_width} solid ${blu};
+        border-radius: 5px;
         padding-left: 15px;
         padding-right: 15px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        color: ${grn};
+        color: ${blu};
       }
 
       #cpu.low {
-        color: ${grn2};
+        color: ${blu};
       }
 
       #cpu.lower-medium {
-        color: ${yllw};
+        color: ${blu};
       }
 
       #cpu.medium {
@@ -153,21 +116,19 @@ in {
       }
 
       #memory {
-        background-color: alpha(${surface1}, 0.7);
-        border-radius: 15px;
+        border: ${border_width} solid ${blu};
+        border-radius: 5px;
         padding-left: 15px;
         padding-right: 15px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        color: ${grn};
+        color: ${blu};
       }
 
       #memory.low {
-        color: ${grn2};
+        color: ${blu};
       }
 
       #memory.lower-medium {
-        color: ${yllw};
+        color: ${blu};
       }
 
       #memory.medium {
@@ -183,21 +144,19 @@ in {
       }
 
       #disk {
-        background-color: alpha(${surface1}, 0.7);
-        border-radius: 15px;
+        border: ${border_width} solid ${blu};
+        border-radius: 5px;
         padding-left: 15px;
         padding-right: 15px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        color: ${grn};
+        color: ${blu};
       }
 
       #disk.low {
-        color: ${grn2};
+        color: ${blu};
       }
 
       #disk.lower-medium {
-        color: ${yllw};
+        color: ${blu};
       }
 
       #disk.medium {
@@ -213,13 +172,11 @@ in {
       }
 
       #battery {
-        background-color: alpha(${surface1}, 0.7);
-        border-radius: 15px;
+        border: ${border_width} solid ${blu};
+        border-radius: 5px;
         padding-left: 15px;
         padding-right: 15px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        color: ${grn};
+        color: ${blu};
       }
 
       #battery.low {
@@ -235,20 +192,18 @@ in {
       }
 
       #battery.upper-medium {
-        color: ${yllw};
+        color: ${blu};
       }
 
       #battery.high {
-        color: ${grn};
+        color: ${blu};
       }
 
       #pulseaudio {
-        background-color: alpha(${surface1}, 0.7);
-        border-radius: 15px;
+        border: ${border_width} solid ${blu};
+        border-radius: 5px;
         padding-left: 15px;
         padding-right: 15px;
-        margin-top: 5px;
-        margin-bottom: 5px;
         color: ${blu};
       }
     '';
@@ -257,12 +212,11 @@ in {
       top_bar = {
         layer = "top";
         position = "top";
-        height = 36;
+        height = 32;
         spacing = 4;
         modules-left = [
           "custom/os_button"
           "hyprland/workspaces"
-          "hyprland/submap"
         ];
         modules-center = [
           "clock#time"
@@ -280,6 +234,7 @@ in {
 
         "custom/os_button" = {
           format = "󱄅";
+          tooltip = false;
         };
 
         "hyprland/workspaces" = {
@@ -293,11 +248,6 @@ in {
           persistent-workspaces = {
             "*" = 10;
           };
-        };
-
-        "hyprland/submap" = {
-          format = "<span color='#a6da95'>Mode:</span> {}";
-          tooltip = false;
         };
 
         "custom/separator" = {
@@ -318,11 +268,11 @@ in {
             weeks-pos = "right";
             on-scroll-right = "mode";
             format = {
-              months = "<span color='#f4dbd6'><b>{}</b></span>";
-              days = "<span color='#cad3f5'><b>{}</b></span>";
-              weeks = "<span color='#c6a0f6'><b>W{}</b></span>";
-              weekdays = "<span color='#a6da95'><b>{}</b></span>";
-              today = "<span color='#8bd5ca'><b><u>{}</u></b></span>";
+              months = "<span color='#edb53d'><b>{}</b></span>";
+              days = "<span color='#edb53d'><b>{}</b></span>";
+              weeks = "<span color='#edb53d'><b>W{}</b></span>";
+              weekdays = "<span color='#edb53d'><b>{}</b></span>";
+              today = "<span color='#fe8019'><b><u>{}</u></b></span>";
             };
           };
         };
@@ -340,11 +290,11 @@ in {
             on-scroll = 1;
             on-click-right = "mode";
             format = {
-              months = "<span color='#f4dbd6'><b>{}</b></span>";
-              days = "<span color='#cad3f5'><b>{}</b></span>";
-              weeks = "<span color='#c6a0f6'><b>W{}</b></span>";
-              weekdays = "<span color='#a6da95'><b>{}</b></span>";
-              today = "<span color='#8bd5ca'><b><u>{}</u></b></span>";
+              months = "<span color='#edb53d'><b>{}</b></span>";
+              days = "<span color='#edb53d'><b>{}</b></span>";
+              weeks = "<span color='#edb53d'><b>W{}</b></span>";
+              weekdays = "<span color='#edb53d'><b>{}</b></span>";
+              today = "<span color='#fe8019'><b><u>{}</u></b></span>";
             };
           };
         };

@@ -60,7 +60,7 @@ in {
 
       # DECORATION
       decoration = {
-        rounding = 10;
+        rounding = 5;
         active_opacity = 0.9;
         inactive_opacity = 0.9;
         fullscreen_opacity = 0.9;

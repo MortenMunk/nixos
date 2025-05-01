@@ -36,12 +36,15 @@ I use this setup on my old Asus laptop, and I consider it stable—it has reliab
 
 ## Screenshot
 
-![image](https://github.com/user-attachments/assets/a0191db7-6285-4e0e-b9cb-37cd993fde51)
+![image](https://github.com/user-attachments/assets/78c53f6c-2c91-400f-8ca4-fd20f3a60e96)
+
 
 
 ## More stuff
 
 Feel free to also check out my [Nixvim](https://github.com/MortenMunk/nixvim) setup, which is available as a standalone flake.
+
+My old Waybar configs can be found [here](https://github.com/MortenMunk/nixos-old-waybar).
 
 ## Inspiration
 Below are some of the sources that have inspired my configuration. There are likely more that I've forgotten to mention, as I tend to lurk in forums and Discord servers for inspiration...

@@ -785,11 +785,11 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1746089745,
-        "narHash": "sha256-QXwooes30BEsv1ie4dqlplO3cO5Klx5kd4bVsuMgYMc=",
+        "lastModified": 1746089897,
+        "narHash": "sha256-1OrBPTaCjCp7XAy4JcYuFloAQWd09WEGXl8ywIqnZK0=",
         "owner": "MortenMunk",
         "repo": "nixvim",
-        "rev": "1378d1b992f8abe84d56999590cdcf6986b17987",
+        "rev": "198f6c669afa0c12f3b9a1a2be1b6290f277a138",
         "type": "github"
       },
       "original": {

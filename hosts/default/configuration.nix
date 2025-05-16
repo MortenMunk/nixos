@@ -45,7 +45,6 @@
     brightnessctl
     docker-compose
     lazydocker
-    sddm-astronaut
   ];
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];

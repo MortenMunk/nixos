@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./sddm.nix
+    ./greetd.nix
     ./time.nix
     ./user.nix
     ./power.nix

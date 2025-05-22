@@ -1,10 +1,19 @@
-{...}: let
-  rd = "#fb4934";
-  orng = "#fe8019";
-  blu = "#83a598";
-  blu2 = "#8ec07c";
-  orng2 = "#d65d0e";
-  border_width = "2px";
+{config, ...}: let
+  stylix = config.lib.stylix.colors.withHashtag;
+  color = {
+    rd = stylix.base08;
+    orng = stylix.base09;
+    blu = stylix.base0D;
+    blu2 = stylix.base0C;
+    orng2 = stylix.base0F;
+    bg = stylix.base00;
+    transparent = "rgba(0,0,0,0)";
+  };
+
+  border = {
+    width = "2px";
+    radius = "5px";
+  };
 in {
   stylix.targets.waybar.enable = false;
 
@@ -16,43 +25,46 @@ in {
       }
 
       window#waybar {
-        background-color: rgba(0,0,0,0);
+        background-color: ${color.transparent};
       }
 
       #custom-os_button {
-        border: ${border_width} solid ${blu};
-        border-radius: 5px;
-        color: ${blu};
+        border: ${border.width} solid ${color.blu};
+        border-radius: ${border.radius};
+        color: ${color.blu};
         font-size: 24px;
         padding-left: 6px;
         padding-right: 12px;
+        background-color: ${color.bg};
       }
 
       #workspaces {
-        border-radius: 5px;
-        border: ${border_width} solid ${blu};
+        border-radius: ${border.radius};
+        border: ${border.width} solid ${color.blu};
+        background-color: ${color.bg};
       }
 
       #workspaces button.active {
-        color: ${blu2};
+        color: ${color.blu2};
       }
 
       #workspaces button {
-        color: ${blu};
+        color: ${color.blu};
       }
 
       .modules-left {
         margin-top: 5px;
         margin-left: 10px;
+        background-color: ${color.transparent};
       }
 
       .modules-center {
         margin-top: 5px;
         font-weight: bold;
-        background-color: rgba(0,0,0,0);
-        color: ${blu};
-        border-radius: 5px;
-        border: ${border_width} solid ${blu};
+        background-color: ${color.bg};
+        color: ${color.blu};
+        border-radius: ${border.radius};
+        border: ${border.width} solid ${color.blu};
         padding-left: 20px;
         padding-right: 20px;
       }
@@ -60,151 +72,169 @@ in {
       .modules-right {
         margin-top: 5px;
         margin-right: 10px;
-        background-color: rgba(0,0,0,0);
+        background-color: ${color.transparent};
       }
 
       #custom-separator {
-        color: ${blu};
+        color: ${color.blu};
       }
 
       #clock.time {
-        color: ${blu};
+        color: ${color.blu};
       }
 
       #clock.calendar {
-        color: ${blu};
+        color: ${color.blu};
       }
 
       #tray {
-        border: ${border_width} solid ${blu};
-        border-radius: 5px ;
+        border: ${border.width} solid ${color.blu};
+        border-radius: ${border.radius};
         padding-left: 15px;
         padding-right: 15px;
+        background-color: ${color.bg};
       }
 
       #tray.needs-attention {
-        background-color: alpha(${rd}, 0.7);
-        border-radius: 15px;
+        border-radius: ${border.radius};
+      }
+
+      #temperature {
+        border: ${border.width} solid ${color.blu};
+        border-radius: ${border.radius};
+        padding-left: 15px;
+        padding-right: 15px;
+        color: ${color.blu};
+        background-color: ${color.bg};
+      }
+
+      #temperature.critical {
+        color: ${color.rd};
       }
 
       #cpu {
-        border: ${border_width} solid ${blu};
-        border-radius: 5px;
+        border: ${border.width} solid ${color.blu};
+        border-radius: ${border.radius};
         padding-left: 15px;
         padding-right: 15px;
-        color: ${blu};
+        color: ${color.blu};
+        background-color: ${color.bg};
       }
 
       #cpu.low {
-        color: ${blu};
+        color: ${color.blu};
       }
 
       #cpu.lower-medium {
-        color: ${blu};
+        color: ${color.blu};
       }
 
       #cpu.medium {
-        color: ${orng};
+        color: ${color.orng};
       }
 
       #cpu.upper-medium {
-        color: ${orng2};
+        color: ${color.orng2};
       }
 
       #cpu.high {
-        color: ${rd};
+        color: ${color.rd};
       }
 
       #memory {
-        border: ${border_width} solid ${blu};
-        border-radius: 5px;
+        border: ${border.width} solid ${color.blu};
+        border-radius: ${border.radius};
         padding-left: 15px;
         padding-right: 15px;
-        color: ${blu};
+        color: ${color.blu};
+        background-color: ${color.bg};
       }
 
       #memory.low {
-        color: ${blu};
+        color: ${color.blu};
       }
 
       #memory.lower-medium {
-        color: ${blu};
+        color: ${color.blu};
       }
 
       #memory.medium {
-        color: ${orng};
+        color: ${color.orng};
       }
 
       #memory.upper-medium {
-        color: ${orng2};
+        color: ${color.orng2};
       }
 
       #memory.high {
-        color: ${rd};
+        color: ${color.rd};
       }
 
       #disk {
-        border: ${border_width} solid ${blu};
-        border-radius: 5px;
+        border: ${border.width} solid ${color.blu};
+        border-radius: ${border.radius};
         padding-left: 15px;
         padding-right: 15px;
-        color: ${blu};
+        color: ${color.blu};
+        background-color: ${color.bg};
       }
 
       #disk.low {
-        color: ${blu};
+        color: ${color.blu};
       }
 
       #disk.lower-medium {
-        color: ${blu};
+        color: ${color.blu};
       }
 
       #disk.medium {
-        color: ${orng}
+        color: ${color.orng}
       }
 
       #disk.upper-medium {
-        color: ${orng2};
+        color: ${color.orng2};
       }
 
       #disk.high {
-        color: ${rd};
+        color: ${color.rd};
       }
 
       #battery {
-        border: ${border_width} solid ${blu};
-        border-radius: 5px;
+        border: ${border.width} solid ${color.blu};
+        border-radius: ${border.radius};
         padding-left: 15px;
         padding-right: 15px;
-        color: ${blu};
+        color: ${color.blu};
+        background-color: ${color.bg};
       }
 
       #battery.low {
-        color: ${rd};
+        color: ${color.rd};
       }
 
       #battery.lower-medium {
-        color: ${orng2};
+        color: ${color.orng2};
       }
 
       #battery.medium {
-        color: ${orng};
+        color: ${color.orng};
       }
 
       #battery.upper-medium {
-        color: ${blu};
+        color: ${color.blu};
       }
 
       #battery.high {
-        color: ${blu};
+        color: ${color.blu};
       }
 
       #pulseaudio {
-        border: ${border_width} solid ${blu};
-        border-radius: 5px;
+        border: ${border.width} solid ${color.blu};
+        border-radius: ${border.radius};
         padding-left: 15px;
         padding-right: 15px;
-        color: ${blu};
+        color: ${color.blu};
+        background-color: ${color.bg};
       }
     '';
 
@@ -225,6 +255,7 @@ in {
         ];
         modules-right = [
           "tray"
+          "temperature"
           "cpu"
           "memory"
           "disk"
@@ -309,6 +340,14 @@ in {
             low = 10;
           };
           on-click = "kitty btop";
+        };
+
+        temperature = {
+          interval = 10;
+          tooltip = false;
+          thermal-zone = 0;
+          critical-threshold = 80;
+          format = " {temperatureC}°C";
         };
 
         memory = {

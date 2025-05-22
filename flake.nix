@@ -14,6 +14,7 @@
     };
     nixvim.url = "github:MortenMunk/nixvim";
     stylix.url = "github:danth/stylix";
+    zjstatus.url = "github:dj95/zjstatus";
   };
 
   outputs = {nixpkgs, ...} @ inputs: {

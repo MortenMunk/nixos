@@ -22,7 +22,7 @@ I use this setup on my old Asus laptop, and I consider it stable—it has reliab
 | **Lock** | Hyprlock |
 | **Idle** | Hypridle |
 | **Editor** | Nixvim |
-| **Display Manager** | SDDM |
+| **Display Manager** | Tuigreet + greetd |
 | **Office** | LibreOffice |
 | **Navigation** | Zoxide |
 | **File Manager** | Yazi |

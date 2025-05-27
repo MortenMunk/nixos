@@ -53,4 +53,4 @@ Below are some of the sources that have inspired my configuration. There are lik
 - [JaKooLit](https://github.com/JaKooLit)
 - [Traxys](https://github.com/traxys)
 - [Vimjoyer](https://www.youtube.com/@vimjoyer) - I highly recommend checking out his videos and joining his Discord server.
-- And a special shoutout to my friend [Thegrubster](https://github.com/thegrubster), who convinced me to use NixOS and continues to keep me updated on cool Nix stuff.
+- And a special shoutout to my friend [andreaskrath](https://github.com/andreaskrath), who convinced me to use NixOS and continues to keep me updated on cool Nix stuff.

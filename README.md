@@ -36,8 +36,7 @@ I use this setup on my old Asus laptop, and I consider it stable—it has reliab
 
 ## Screenshot
 
-![image](https://github.com/user-attachments/assets/78c53f6c-2c91-400f-8ca4-fd20f3a60e96)
-
+![image](https://github.com/user-attachments/assets/079ffde3-2d86-467b-9327-ee2b864044c2)
 
 
 ## More stuff

@@ -8,5 +8,6 @@
     ./cachix.nix
     ./network.nix
     ./wayland.nix
+    ./udev.nix
   ];
 }

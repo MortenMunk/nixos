@@ -6,5 +6,6 @@
     ./discord/discord.nix
     ./devenv.nix
     ./thunderbird.nix
+    ./isabelle.nix
   ];
 }

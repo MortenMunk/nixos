@@ -181,6 +181,7 @@ in {
       windowrule = [
         "opaque, class:^(Emulator)$"
         "float, class:^(Emulator)$"
+        "tile, class:^(isabelle-jedit-.*)$"
         "opaque, class:^(brave-browser)$"
         "opaque, class:^(librewolf)$"
         "opaque, class:^(zathura)$"

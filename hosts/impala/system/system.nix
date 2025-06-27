@@ -1,5 +1,6 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
+    ./nh.nix
     ./greetd.nix
     ./time.nix
     ./user.nix
@@ -9,5 +10,9 @@
     ./network.nix
     ./wayland.nix
     ./udev.nix
+  ];
+
+  environment.systemPackages = with pkgs; [
+    just
   ];
 }

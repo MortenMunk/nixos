@@ -23,13 +23,12 @@
       ".." = "cd ../";
       "...." = "cd ../../";
       "......" = "cd ../../../";
-      rswitch = "sudo nixos-rebuild switch --flake /etc/nixos#default";
-      rboot = "sudo nixos-rebuild boot --flake /etc/nixos#default";
+      rswitch = "sudo nixos-rebuild switch --flake /etc/nixos#impala";
+      rboot = "sudo nixos-rebuild boot --flake /etc/nixos#impala";
       nixfiles = "cd ~/../../etc/nixos/";
       config = "cd ~/.config/";
       home = "cd";
       software = "cd ~/software/";
-      switch = "git add . && sudo nixos-rebuild switch --flake /etc/nixos#default |& nom";
     };
 
     oh-my-zsh = {

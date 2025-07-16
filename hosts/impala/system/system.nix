@@ -6,6 +6,7 @@
     ./user.nix
     ./power.nix
     ./sound.nix
+    ./security.nix
     ./cachix.nix
     ./network.nix
     ./wayland.nix

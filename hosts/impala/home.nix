@@ -17,7 +17,6 @@
 
   home.packages = with pkgs; [
     nautilus
-    mongodb-compass
   ];
 
   nixpkgs.config.allowUnfree = true;

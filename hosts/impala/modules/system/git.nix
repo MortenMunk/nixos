@@ -1,6 +1,6 @@
 {
   home.file."./ssh/allowed_signers".text = ''
-    * ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEfAF+fzpSlaLSjud8attW/E7Yn/wd4s93dO+MnMLDFp mortenmunk97@gmail.com
+    * ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHoxV/uzpDWKBHPlzVqAsJNpkuSyOUlXLGMxldQ563O/ mortenmunk97@gmail.com
   '';
 
   programs = {
@@ -30,4 +30,3 @@
     };
   };
 }
-

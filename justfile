@@ -8,3 +8,6 @@ switch:
 boot:
     @git add .
     @nh os boot .
+
+clean:
+    @nh clean all

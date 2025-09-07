@@ -7,6 +7,7 @@
     hostname,
     system ? "x86_64-linux",
     remote ? false,
+    thinkpad ? false,
   }: let
     hostConfig = ./hosts + "/${hostname}/configuration.nix";
   in
@@ -31,6 +32,9 @@
         ++ lib.optionals (!remote) [
           inputs.home-manager.nixosModules.default
           inputs.stylix.nixosModules.stylix
+        ]
+        ++ lib.optionals thinkpad [
+          inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14s-amd-gen1
         ];
     };
 in {inherit mkNixOS;}

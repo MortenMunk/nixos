@@ -15,10 +15,9 @@
       submodules = true;
     };
 
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
     nixvim.url = "github:MortenMunk/nixvim";
-
     stylix.url = "github:danth/stylix";
-
     zjstatus.url = "github:dj95/zjstatus";
   };
 
@@ -31,6 +30,7 @@
         # laptop
         impala = mkNixOS {
           hostname = "impala";
+          thinkpad = true;
         };
       };
     };

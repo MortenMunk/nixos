@@ -15,6 +15,19 @@
     radius = "5px";
   };
 in {
+  home.file.".config/waybar/scripts/vpn-status.sh" = {
+    text = ''
+      #!/usr/bin/env bash
+
+      if systemctl is-active --quiet openvpn-work_vpn; then
+        echo '{"text": "🔒 VPN ON", "class": "connected"}'
+      else
+        echo '{"text": "🔓 VPN OFF", "class": "disconnected"}'
+      fi
+    '';
+    executable = true;
+  };
+
   stylix.targets.waybar.enable = false;
 
   programs.waybar = {
@@ -26,6 +39,20 @@ in {
 
       window#waybar {
         background-color: ${color.transparent};
+      }
+
+      #custom-vpn {
+        border: ${border.width} solid ${color.blu};
+        border-radius: ${border.radius};
+        color: ${color.blu};
+        background-color: ${color.bg};
+        font-size: 12px;
+        padding-left: 6px;
+        padding-right: 6px;
+      }
+
+      #custom-vpn.connected {
+        color: ${color.orng};
       }
 
       #custom-os_button {
@@ -247,6 +274,7 @@ in {
         modules-left = [
           "custom/os_button"
           "hyprland/workspaces"
+          "custom/vpn"
         ];
         modules-center = [
           "clock#time"
@@ -265,6 +293,13 @@ in {
 
         "custom/os_button" = {
           format = "󱄅";
+          tooltip = false;
+        };
+
+        "custom/vpn" = {
+          exec = "/home/morten/.config/waybar/scripts/vpn-status.sh";
+          interval = 5;
+          return-type = "json";
           tooltip = false;
         };
 

@@ -1,8 +1,7 @@
 {pkgs, ...}: {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
-    plugins = [pkgs.rofi-emoji-wayland];
+    plugins = [pkgs.rofi-emoji];
     extraConfig = {
       modi = "drun,run,filebrowser";
       show-icons = true;

@@ -19,13 +19,23 @@
     nixvim.url = "github:MortenMunk/nixvim";
     stylix.url = "github:danth/stylix";
     zjstatus.url = "github:dj95/zjstatus";
+    agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = inputs:
+  outputs = {
+    self,
+    nixpkgs,
+    agenix,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    lib = nixpkgs.lib;
+  in
     with import ./make.nix {
-      inherit inputs;
-      lib = inputs.nixpkgs.lib;
+      inherit inputs lib;
     }; {
+      packages.${system}.agenix = agenix.packages.${system}.default;
+
       nixosConfigurations = {
         # laptop
         impala = mkNixOS {

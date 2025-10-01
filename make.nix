@@ -31,6 +31,7 @@
         ]
         ++ lib.optionals (!remote) [
           inputs.home-manager.nixosModules.default
+          inputs.agenix.nixosModules.default
           inputs.stylix.nixosModules.stylix
         ]
         ++ lib.optionals thinkpad [

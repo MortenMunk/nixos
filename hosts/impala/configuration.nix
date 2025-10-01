@@ -8,6 +8,7 @@
     ./hardware-configuration.nix
     ./system/system.nix
     ./stylix.nix
+    ./secrets.nix
   ];
 
   # Bootloader.
@@ -20,9 +21,6 @@
 
   # Configure console keymap
   console.keyMap = "dk-latin1";
-
-  # Enabled to allow Hyprlock
-  security.pam.services.hyprlock = {};
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};

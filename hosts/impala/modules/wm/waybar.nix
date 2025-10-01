@@ -20,9 +20,9 @@ in {
       #!/usr/bin/env bash
 
       if systemctl is-active --quiet openvpn-work_vpn; then
-        echo '{"text": "🔒 VPN ON", "class": "connected"}'
+        echo '{"text": "   VPN ON", "class": "connected"}'
       else
-        echo '{"text": "🔓 VPN OFF", "class": "disconnected"}'
+        echo '{"text": "   VPN OFF", "class": "disconnected"}'
       fi
     '';
     executable = true;
@@ -46,7 +46,7 @@ in {
         border-radius: ${border.radius};
         color: ${color.blu};
         background-color: ${color.bg};
-        font-size: 12px;
+        font-size: 14px;
         padding-left: 6px;
         padding-right: 6px;
       }

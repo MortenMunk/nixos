@@ -91,11 +91,6 @@ in {
         ];
       };
 
-      # GESTURES
-      gestures = {
-        workspace_swipe = true;
-      };
-
       # MASTER
       master = {
         new_status = "master";

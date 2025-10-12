@@ -179,7 +179,7 @@ in {
         "tile, class:^(isabelle-jedit-.*)$"
         "opaque, class:^(brave-browser)$"
         "opaque, class:^(librewolf)$"
-        "opaque, class:^(zathura)$"
+        "opaque, class:^(org.pwmt.zathura)$"
         "opaque, class:^(libreoffice-writer)$"
         "opaque, class:^(libreoffice-impress)$"
         "suppressevent maximize, class:^(librewolf)$"

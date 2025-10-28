@@ -23,10 +23,12 @@
 
     git = {
       enable = true;
-      userName = "Morten Munk";
-      userEmail = "mortenmunk97@gmail.com";
       signing.format = "ssh";
-      extraConfig = {
+      settings = {
+        user = {
+          name = "Morten Munk";
+          email = "mortenmunk97@gmail.com";
+        };
         commit.gpgsign = true;
         gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
         user.signingkey = "~/.ssh/id_ed25519_github.pub";

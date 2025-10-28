@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./nh.nix
+    ./bluetooth.nix
     ./greetd.nix
     ./time.nix
     ./user.nix

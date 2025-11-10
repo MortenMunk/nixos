@@ -15,7 +15,7 @@
     ./patcher.nix
   ];
 
-  programs.discord = {
+  programs.custom_discord = {
     enable = true;
     wrapDiscord = true;
   };

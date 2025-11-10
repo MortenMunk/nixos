@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  cfg = config.programs.discord;
+  cfg = config.programs.custom_discord;
   discordPatcherBin = pkgs.writers.writePython3Bin "discord-krisp-patcher" {
     libraries = with pkgs.python3Packages; [pyelftools capstone];
     flakeIgnore = [
@@ -19,7 +19,7 @@
     ${pkgs.discord}/bin/discord "$@"
   '';
 in {
-  options.programs.discord = {
+  options.programs.custom_discord = {
     enable = lib.mkEnableOption "Discord";
     wrapDiscord = lib.mkEnableOption "wrap the Discord binary with a patching each time";
   };

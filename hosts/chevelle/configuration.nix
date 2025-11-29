@@ -8,6 +8,7 @@
     ./hardware-configuration.nix
     ./system/system.nix
     inputs.niri.nixosModules.niri
+    ./stylix.nix
   ];
 
   # Bootloader.

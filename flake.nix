@@ -9,15 +9,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
     };
 
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     nixvim.url = "github:MortenMunk/nixvim";
-    stylix.url = "github:danth/stylix";
     zjstatus.url = "github:dj95/zjstatus";
     agenix.url = "github:ryantm/agenix";
   };

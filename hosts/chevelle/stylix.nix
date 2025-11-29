@@ -10,5 +10,6 @@
       name = "Capitaine Cursors (Gruvbox)";
       size = 32;
     };
+    enableReleaseChecks = false;
   };
 }

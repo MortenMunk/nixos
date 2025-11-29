@@ -44,7 +44,7 @@
 
   programs.niri = {
     enable = true;
-    package = pkgs.niri-stable;
+    package = pkgs.niri-unstable;
   };
 
   system.stateVersion = "25.05"; # Did you read the comment?

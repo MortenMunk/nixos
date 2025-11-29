@@ -16,6 +16,15 @@
   environment.variables.VISUAL = lib.mkOverride 900 "nvim";
   environment.variables.SUDO_EDITOR = lib.mkOverride 900 "nvim";
 
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users.morten = {
+      imports = [
+        ./home.nix
+      ];
+    };
+  };
+
   # Configure console keymap
   console.keyMap = "dk-latin1";
 

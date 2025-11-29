@@ -11,6 +11,10 @@
     ./stylix.nix
   ];
 
+  nixpkgs.overlays = [
+    inputs.niri.overlays.niri
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -38,7 +42,10 @@
     git
   ];
 
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri-stable;
+  };
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }

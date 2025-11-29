@@ -7,6 +7,7 @@
     ./modules/browser/brave.nix
     ./modules/terminal/default.nix
     ./modules/style/fonts.nix
+    ./modules/text-editor/default.nix
     ./modules/system/default.nix
   ];
 

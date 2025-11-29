@@ -9,6 +9,7 @@
     ./system/system.nix
     inputs.niri.nixosModules.niri
     ./stylix.nix
+    ./secrets.nix
   ];
 
   nixpkgs.overlays = [
@@ -38,7 +39,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    vim
     git
   ];
 

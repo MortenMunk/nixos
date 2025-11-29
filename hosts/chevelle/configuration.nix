@@ -34,7 +34,6 @@
   environment.systemPackages = with pkgs; [
     vim
     git
-    yazi
   ];
 
   programs.niri.enable = true;

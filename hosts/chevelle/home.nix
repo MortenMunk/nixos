@@ -3,7 +3,7 @@
   home.homeDirectory = "/home/morten";
 
   imports = [
-    ./modules/wm/default.nix
+    ./modules/wm/niri.nix
     ./modules/browser/brave.nix
     ./modules/terminal/default.nix
     ./modules/style/fonts.nix

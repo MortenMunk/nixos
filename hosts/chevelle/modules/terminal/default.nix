@@ -4,5 +4,6 @@
     ./zsh.nix
     ./yazi.nix
     ./zoxide.nix
+    ./zellij.nix
   ];
 }

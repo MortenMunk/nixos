@@ -7,6 +7,7 @@
   imports = [
     ./hardware-configuration.nix
     ./system/system.nix
+    inputs.niri.nixosModules.niri
   ];
 
   # Bootloader.

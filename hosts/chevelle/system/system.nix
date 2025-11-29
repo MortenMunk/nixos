@@ -6,6 +6,7 @@
     ./greetd.nix
     ./security.nix
     ./time.nix
+    ./wayland.nix
   ];
 
   environment.systemPackages = with pkgs; [

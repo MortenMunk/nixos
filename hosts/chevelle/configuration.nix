@@ -38,10 +38,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    git
-  ];
-
   programs.niri = {
     enable = true;
     package = pkgs.niri-unstable;

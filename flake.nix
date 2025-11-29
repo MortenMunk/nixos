@@ -42,6 +42,10 @@
           hostname = "impala";
           thinkpad = true;
         };
+        #desktop
+        chevelle = mkNixOS {
+          hostname = "chevelle";
+        };
       };
     };
 }

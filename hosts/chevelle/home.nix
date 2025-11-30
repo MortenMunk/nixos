@@ -15,10 +15,6 @@
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  home.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-  };
-
   nixpkgs.config.allowUnfree = true;
 
   # Let Home Manager install and manage itself.

@@ -8,6 +8,7 @@
     ./security.nix
     ./time.nix
     ./wayland.nix
+    ./gaming.nix
   ];
 
   environment.systemPackages = with pkgs; [

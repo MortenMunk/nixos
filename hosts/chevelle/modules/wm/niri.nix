@@ -2,6 +2,8 @@
   imports = [
     ./keybinds.nix
     ./waybar.nix
+    ./monitor.nix
+    ./rules.nix
   ];
 
   programs.niri.settings = {
@@ -12,5 +14,7 @@
     spawn-at-startup = [
       {argv = ["waybar"];}
     ];
+
+    prefer-no-csd = true;
   };
 }

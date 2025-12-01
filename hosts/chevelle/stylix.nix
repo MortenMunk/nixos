@@ -11,5 +11,6 @@
       size = 32;
     };
     enableReleaseChecks = false;
+    targets.grub.enable = false;
   };
 }

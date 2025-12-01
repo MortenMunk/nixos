@@ -10,6 +10,18 @@
     "Mod+Shift+F".action = toggle-windowed-fullscreen;
     "Mod+Space".action = toggle-window-floating;
 
+    "Mod+Ctrl+Tab".action = switch-focus-between-floating-and-tiling;
+    "Mod+Shift+Space".action = move-window-to-floating;
+    "Mod+Ctrl+Space".action = move-window-to-tiling;
+
+    "Mod+Ctrl+Minus".action = set-column-width "-10%";
+    "Mod+Ctrl+Plus".action = set-column-width "+10%";
+
+    "Mod+BracketLeft".action = switch-preset-column-width-back;
+    "Mod+BracketRight".action = switch-preset-column-width;
+    "Mod+Shift+M".action = center-column;
+    "Mod+M".action = maximize-column;
+
     # Focus (Vim)
     "Mod+H".action = focus-column-left;
     "Mod+L".action = focus-column-right;

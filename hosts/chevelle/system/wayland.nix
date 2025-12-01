@@ -6,7 +6,10 @@
 
   hardware = {
     graphics.enable = true;
-    nvidia.open = true;
+    nvidia = {
+      open = true;
+      powerManagement.enable = true;
+    };
   };
 
   services.xserver.videoDrivers = ["nvidia"];

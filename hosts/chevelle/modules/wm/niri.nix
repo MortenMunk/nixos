@@ -1,4 +1,8 @@
-{...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ./keybinds.nix
     ./waybar.nix
@@ -16,5 +20,10 @@
     ];
 
     prefer-no-csd = true;
+
+    xwayland-satellite = {
+      enable = true;
+      path = lib.getExe pkgs.xwayland-satellite;
+    };
   };
 }

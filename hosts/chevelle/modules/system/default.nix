@@ -6,6 +6,6 @@
     ./fastfetch.nix
     ./dunst.nix
     ./git.nix
-    ./mic.nix
+    #./mic.nix
   ];
 }

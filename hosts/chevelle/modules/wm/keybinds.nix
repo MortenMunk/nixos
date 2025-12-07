@@ -81,5 +81,8 @@
     # Overview'
     "Mod+Tab".action = toggle-overview;
     "Mod+F1".action = show-hotkey-overlay;
+
+    # Screenshot
+    "Mod+S".action.screenshot = {show-pointer = false;};
   };
 }

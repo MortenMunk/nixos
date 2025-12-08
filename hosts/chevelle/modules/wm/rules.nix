@@ -9,5 +9,9 @@
       };
       clip-to-geometry = true;
     }
+    {
+      matches = [{app-id = "^kitty$";}];
+      opacity = 0.95;
+    }
   ];
 }

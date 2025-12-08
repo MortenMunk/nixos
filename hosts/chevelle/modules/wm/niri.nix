@@ -21,7 +21,7 @@
 
     spawn-at-startup = [
       {argv = ["waybar"];}
-      {argv = ["swaybg" "-i" "~/../../etc/nixos/wallpapers/bg1.jpg"];}
+      {argv = ["swaybg" "-i" "/etc/nixos/wallpapers/bg1.jpg"];}
     ];
 
     prefer-no-csd = true;

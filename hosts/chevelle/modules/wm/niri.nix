@@ -20,7 +20,7 @@
     input.keyboard.xkb.layout = "dk";
 
     spawn-at-startup = [
-      {argv = ["waybar"];}
+      {argv = ["systemctl" "--user" "reset-failed" "waybar.service"];}
       {argv = ["swaybg" "-i" "/etc/nixos/wallpapers/bg1.jpg"];}
     ];
 

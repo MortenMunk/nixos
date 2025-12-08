@@ -10,6 +10,10 @@
     ./rules.nix
   ];
 
+  home.packages = with pkgs; [
+    swaybg
+  ];
+
   programs.niri.settings = {
     environment."NIXOS_OZONE_WL" = "1";
 
@@ -17,6 +21,7 @@
 
     spawn-at-startup = [
       {argv = ["waybar"];}
+      {argv = ["swaybg" "-i" "~/../../etc/nixos/wallpapers/bg1.jpg"];}
     ];
 
     prefer-no-csd = true;

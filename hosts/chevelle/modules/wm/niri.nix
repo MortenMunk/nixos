@@ -32,5 +32,7 @@
     };
 
     hotkey-overlay.skip-at-startup = true;
+
+    layout.gaps = 8;
   };
 }

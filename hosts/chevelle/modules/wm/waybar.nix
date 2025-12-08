@@ -63,7 +63,7 @@ in {
 
       .modules-left {
         padding: 7px;
-        margin: 10 0 5 10;
+        margin: 10px 0px 5px 10px;
         border-radius: 10px;
         background: alpha(${stylix.base00},.6);
         box-shadow: 0px 0px 2px rgba(0,0,0,.6);
@@ -71,7 +71,7 @@ in {
 
       .modules-center {
         padding:7px;
-        margin:10 0 5 0;
+        margin:10px 0px 5px 0px;
         border-radius: 10px;
         background: alpha(${stylix.base00},.6);
         box-shadow: 0px 0px 2px rgba(0,0,0,.6);
@@ -79,7 +79,7 @@ in {
 
       .modules-right {
         padding: 7px;
-        margin: 10 10 5 0;
+        margin: 10px 10px 5px 0px;
         border-radius: 10px;
         background: alpha(${stylix.base00},.6);
         box-shadow: 0px 0px 2px rgba(0,0,0,.6);

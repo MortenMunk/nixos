@@ -12,6 +12,11 @@ in {
       modules-center = ["niri/workspaces"];
       modules-right = ["network" "cpu" "memory" "temperature"];
 
+      "niri/workspaces" = {
+        format = "●";
+        on-click = "activate";
+      };
+
       clock = {
         format = "{:%I:%M:%S %p} ";
         interval = 1;
@@ -24,25 +29,24 @@ in {
       };
 
       network = {
-        format-ethernet = "";
+        format-ethernet = "󰈁";
         format-disconnected = "";
-        tooltip-format-disconnected = "Error";
+        tooltip-format-disconnected = "󰈂";
         tooltip-format-ethernet = "{ifname}";
         on-click = "nmtui";
       };
 
       cpu = {
-        format = "sovs";
-        tooltip = true;
+        format = "{usage}%";
       };
 
       memory = {
-        format = "sovs";
+        format = "{percentage}%";
       };
 
       temperature = {
         critical-threshold = 80;
-        format = "sovs";
+        format = "{temperatureC}°C";
       };
 
       tray = {

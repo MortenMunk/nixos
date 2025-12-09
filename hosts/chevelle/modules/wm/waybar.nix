@@ -12,11 +12,17 @@ in {
 
       modules-left = ["clock" "tray"];
       modules-center = ["niri/workspaces"];
-      modules-right = ["network" "cpu" "memory" "temperature" "disk"];
+      modules-right = ["network" "cpu" "memory" "temperature" "disk" "custom/nixos"];
 
       "niri/workspaces" = {
         format = "●";
         on-click = "activate";
+      };
+
+      "custom/nixos" = {
+        format = " 󱄅 ";
+        on-click = "wlogout";
+        tooltip = false;
       };
 
       clock = {
@@ -155,9 +161,15 @@ in {
       }
 
       #cpu,#memory,#temperature,#disk,#network{
-        padding: 0px 5px;
+        padding: 0px 10px;
         transition: all .3s ease;
         color: ${stylix.base07};
+      }
+
+      #custom-nixos {
+        padding: 0px 10px;
+        font-size: 25px;
+        color: #B2C9EB;
       }
 
       #tray{

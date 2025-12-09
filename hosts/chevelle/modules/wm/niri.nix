@@ -8,6 +8,7 @@
     ./waybar.nix
     ./monitor.nix
     ./rules.nix
+    ./wlogout.nix
   ];
 
   home.packages = with pkgs; [

@@ -1,6 +1,8 @@
 {config, ...}: let
   stylix = config.lib.stylix.colors.withHashtag;
 in {
+  stylix.targets.waybar.enable = false;
+
   programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -10,7 +12,7 @@ in {
 
       modules-left = ["clock" "tray"];
       modules-center = ["niri/workspaces"];
-      modules-right = ["network" "cpu" "memory" "temperature"];
+      modules-right = ["network" "cpu" "memory" "temperature" "disk"];
 
       "niri/workspaces" = {
         format = "●";
@@ -18,7 +20,7 @@ in {
       };
 
       clock = {
-        format = "{:%I:%M:%S %p} ";
+        format = "{:%H:%M:%S} ";
         interval = 1;
         tooltip-format = "<tt>{calendar}</tt>";
         calendar.format.today = "<span color='#fAfBfC'><b>{}</b></span>";
@@ -30,23 +32,28 @@ in {
 
       network = {
         format-ethernet = "󰈁";
-        format-disconnected = "";
         tooltip-format-disconnected = "󰈂";
         tooltip-format-ethernet = "{ifname}";
         on-click = "nmtui";
       };
 
       cpu = {
-        format = "{usage}%";
+        format = "󰍛";
+        on-click = "btop";
       };
-
       memory = {
-        format = "{percentage}%";
+        format = "";
+        on-click = "btop";
       };
 
       temperature = {
         critical-threshold = 80;
-        format = "{temperatureC}°C";
+        format = "";
+      };
+
+      disk = {
+        format = "";
+        on-click = "btop";
       };
 
       tray = {
@@ -69,24 +76,24 @@ in {
         padding: 7px;
         margin: 10px 0px 5px 10px;
         border-radius: 10px;
-        background: alpha(${stylix.base00},.6);
-        box-shadow: 0px 0px 2px rgba(0,0,0,.6);
+        background: alpha(${stylix.base00},.7);
+        box-shadow: 0px 0px 2px rgba(0,0,0,.7);
       }
 
       .modules-center {
         padding:7px;
         margin:10px 0px 5px 0px;
         border-radius: 10px;
-        background: alpha(${stylix.base00},.6);
-        box-shadow: 0px 0px 2px rgba(0,0,0,.6);
+        background: alpha(${stylix.base00},.7);
+        box-shadow: 0px 0px 2px rgba(0,0,0,.7);
       }
 
       .modules-right {
         padding: 7px;
         margin: 10px 10px 5px 0px;
         border-radius: 10px;
-        background: alpha(${stylix.base00},.6);
-        box-shadow: 0px 0px 2px rgba(0,0,0,.6);
+        background: alpha(${stylix.base00},.7);
+        box-shadow: 0px 0px 2px rgba(0,0,0,.7);
       }
 
       tooltop {
@@ -94,7 +101,7 @@ in {
         color: ${stylix.base07};
       }
 
-      #clock:hover, #network.hover, #cpu.hover, #temperature.hover {
+      #clock:hover, #network.hover, #cpu.hover, #temperature.hover, #disk.hover {
         transition: all .3s ease;
         color:  ${stylix.base09};
       }
@@ -147,13 +154,7 @@ in {
         text-shadow: 0px 0px 2px rgba(0,0,0,.5);
       }
 
-      #network {
-        padding: 0px 5px;
-        transition: all .3s ease;
-        color: ${stylix.base07};
-      }
-
-      #cpu,#memory,#temperature{
+      #cpu,#memory,#temperature,#disk,#network{
         padding: 0px 5px;
         transition: all .3s ease;
         color: ${stylix.base07};

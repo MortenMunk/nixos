@@ -37,8 +37,9 @@ in {
       };
 
       network = {
+        format = "󰈁";
+        format-disconnected = "󰈁";
         format-ethernet = "󰈁";
-        tooltip-format-disconnected = "󰈂";
         tooltip-format-ethernet = "{ifname}";
         on-click = "nmtui";
       };

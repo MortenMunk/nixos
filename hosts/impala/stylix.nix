@@ -10,6 +10,12 @@
       name = "Capitaine Cursors (Gruvbox)";
       size = 32;
     };
+    iconTheme = {
+      enable = true;
+      package = pkgs.gruvbox-plus-icons;
+      light = "Gruvbox-Plus-Light";
+      dark = "Gruvbox-Plus-Dark";
+    };
     enableReleaseChecks = false;
   };
 }

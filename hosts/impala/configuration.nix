@@ -44,6 +44,7 @@
     docker-compose
     lazydocker
     usbutils
+    inputs.agenix.packages.${stdenv.hostPlatform.system}.default
   ];
 
   system.stateVersion = "24.05"; # Did you read the comment?

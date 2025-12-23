@@ -10,6 +10,12 @@ in {
         owner = "morten";
         mode = "600";
       };
+      work-vpn-impala = {
+        file = ../../secrets/work-vpn-impala.age;
+        path = "/etc/wireguard/wg1.conf";
+        owner = "morten";
+        mode = "600";
+      };
     };
   };
 }

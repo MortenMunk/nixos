@@ -19,7 +19,7 @@ in {
     text = ''
       #!/usr/bin/env bash
 
-      if systemctl is-active --quiet openvpn-work_vpn; then
+      if ip link show wg1 &>/dev/null; then
         echo '{"text": "   VPN ON", "class": "connected"}'
       else
         echo '{"text": "   VPN OFF", "class": "disconnected"}'

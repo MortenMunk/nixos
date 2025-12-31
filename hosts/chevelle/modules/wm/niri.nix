@@ -18,7 +18,10 @@
   programs.niri.settings = {
     environment."NIXOS_OZONE_WL" = "1";
 
-    input.keyboard.xkb.layout = "dk";
+    input = {
+      keyboard.xkb.layout = "dk";
+      mouse.accel-speed = -0.2;
+    };
 
     spawn-at-startup = [
       {argv = ["systemctl" "--user" "reset-failed" "waybar.service"];}

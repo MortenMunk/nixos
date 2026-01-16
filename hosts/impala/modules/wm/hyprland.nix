@@ -174,15 +174,10 @@ in {
       ];
 
       windowrule = [
-        "match:class ^(Emulator)$ opaque on"
-        "match:class ^(Emulator)$ float on"
-        "match:class ^(isabelle-jedit-.*)$ float off"
-        "match:class ^(brave-browser)$ opaque on"
-        "match:class ^(librewolf)$ opaque on"
-        "match:class ^(org.pwmt.zathura)$ opaque on"
-        "match:class ^(libreoffice-writer)$ opaque on"
-        "match:class ^(libreoffice-impress)$ opaque on"
-        "match:class ^(librewolf)$ suppressevent maximize"
+        "opaque on, match:class ^(brave-browser)$"
+        "opaque on, match:class ^(org.pwmt.zathura)$"
+        "opaque on, match:class ^(libreoffice-writer)$"
+        "opaque on, match:class ^(libreoffice-impress)$"
       ];
     };
   };

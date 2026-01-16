@@ -10,7 +10,7 @@
       name = "Capitaine Cursors (Gruvbox)";
       size = 32;
     };
-    iconTheme = {
+    icons = {
       enable = true;
       package = pkgs.gruvbox-plus-icons;
       light = "Gruvbox-Plus-Light";

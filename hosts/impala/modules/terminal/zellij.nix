@@ -1,14 +1,19 @@
-{inputs, ...}: let
+{
+  inputs,
+  config,
+  ...
+}: let
   zjstatus = inputs.zjstatus.packages."x86_64-linux".default;
+  stylix = config.lib.stylix.colors.withHashtag;
   colors = {
-    red = "#cc241d";
-    green = "#98971a";
-    yellow = "#d79921";
-    blue = "#458588";
-    purple = "#b16286";
-    aqua = "#689d6a";
-    orange = "#d65d0e";
-    gray = "#a89984";
+    red = stylix.base08;
+    green = stylix.base0B;
+    yellow = stylix.base0A;
+    blue = stylix.base0D;
+    purple = stylix.base0E;
+    aqua = stylix.base0C;
+    orange = stylix.base09;
+    gray = stylix.base04;
   };
 in {
   programs.zellij = {

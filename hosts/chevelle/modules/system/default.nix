@@ -2,10 +2,8 @@
   imports = [
     ./btop.nix
     ./clip.nix
-    ./rofi.nix
+    ./vicinae.nix
     ./fastfetch.nix
-    ./dunst.nix
     ./git.nix
-    #./mic.nix
   ];
 }

@@ -29,6 +29,8 @@
     nixvim.url = "github:MortenMunk/nixvim";
     zjstatus.url = "github:dj95/zjstatus";
     agenix.url = "github:ryantm/agenix";
+    noctalia.url = "github:noctalia-dev/noctalia-shell";
+    vicinae.url = "github:vicinaehq/vicinae";
   };
 
   outputs = {

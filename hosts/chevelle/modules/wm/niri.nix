@@ -5,10 +5,9 @@
 }: {
   imports = [
     ./keybinds.nix
-    ./waybar.nix
     ./monitor.nix
     ./rules.nix
-    ./wlogout.nix
+    ./noctalia.nix
   ];
 
   home.packages = with pkgs; [
@@ -21,7 +20,6 @@
     input.keyboard.xkb.layout = "dk";
 
     spawn-at-startup = [
-      {argv = ["systemctl" "--user" "reset-failed" "waybar.service"];}
       {argv = ["swaybg" "-i" "/etc/nixos/wallpapers/bg1.jpg"];}
     ];
 

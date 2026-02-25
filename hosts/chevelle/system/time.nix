@@ -1,6 +1,9 @@
 {...}: {
   # Set your time zone.
-  time.timeZone = "Europe/Copenhagen";
+  time = {
+    timeZone = "Europe/Copenhagen";
+    hardwareClockInLocalTime = true;
+  };
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_DK.UTF-8";

@@ -38,6 +38,8 @@
     enableOnBoot = false;
   };
 
+  documentation.enable = false;
+
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
     brightnessctl

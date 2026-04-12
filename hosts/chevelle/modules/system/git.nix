@@ -9,18 +9,6 @@
 
   services.ssh-agent.enable = true;
   programs = {
-    ssh = {
-      enable = true;
-      enableDefaultConfig = false;
-      matchBlocks = {
-        "github.com" = {
-          addKeysToAgent = "yes";
-          identityFile = "~/.ssh/github_private_key";
-          identitiesOnly = true;
-        };
-      };
-    };
-
     git = {
       enable = true;
       signing.format = "ssh";

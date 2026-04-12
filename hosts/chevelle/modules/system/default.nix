@@ -5,5 +5,6 @@
     ./vicinae.nix
     ./fastfetch.nix
     ./git.nix
+    ./ssh.nix
   ];
 }

@@ -9,7 +9,10 @@
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   hardware = {
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
     nvidia = {
       open = true;
       powerManagement.enable = true;

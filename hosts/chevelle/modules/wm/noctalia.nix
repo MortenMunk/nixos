@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
     inputs.noctalia.homeModules.default
   ];
@@ -13,6 +8,7 @@
     systemd.enable = true;
     settings = {
       bar = {
+        floating = true;
         density = "compact";
         position = "top";
         showCapsule = false;
@@ -63,6 +59,12 @@
       location = {
         monthBeforeDay = false;
         name = "Copenhagen, Denmark";
+      };
+      wallpaper = {
+        enabled = false;
+      };
+      dock = {
+        enabled = false;
       };
     };
   };

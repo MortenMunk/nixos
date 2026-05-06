@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     heroic
+    wineWow64Packages.staging
+    winetricks
   ];
 
   programs.steam = {

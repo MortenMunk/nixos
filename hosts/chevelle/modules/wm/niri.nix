@@ -21,6 +21,7 @@
 
     spawn-at-startup = [
       {argv = ["swaybg" "-i" "/etc/nixos/wallpapers/bg1.jpg"];}
+      {command = ["noctalia-shell"];}
     ];
 
     prefer-no-csd = true;

@@ -2,6 +2,7 @@
   imports = [
     ./nh.nix
     ./bluetooth.nix
+    ./gaming.nix
     ./greetd.nix
     ./time.nix
     ./user.nix

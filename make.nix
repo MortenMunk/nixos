@@ -33,6 +33,7 @@
           inputs.home-manager.nixosModules.default
           inputs.agenix.nixosModules.default
           inputs.stylix.nixosModules.stylix
+          inputs.niri.nixosModules.niri
         ]
         ++ lib.optionals thinkpad [
           inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14s-amd-gen1

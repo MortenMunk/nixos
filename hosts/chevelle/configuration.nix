@@ -7,14 +7,16 @@
   imports = [
     ./hardware-configuration.nix
     ./system/system.nix
-    inputs.niri.nixosModules.niri
     ./stylix.nix
     ./secrets.nix
   ];
 
-  nixpkgs.overlays = [
-    inputs.niri.overlays.niri
-  ];
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      inputs.niri.overlays.niri
+    ];
+  };
 
   # GRUB for dual boot
   boot.loader = {
@@ -42,8 +44,6 @@
 
   # Configure console keymap
   console.keyMap = "dk-latin1";
-
-  nixpkgs.config.allowUnfree = true;
 
   programs.niri = {
     enable = true;

@@ -11,6 +11,13 @@
     ./secrets.nix
   ];
 
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      inputs.niri.overlays.niri
+    ];
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -31,8 +38,6 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   virtualisation.docker = {
     enable = true;
     enableOnBoot = false;
@@ -48,6 +53,11 @@
     usbutils
     inputs.agenix.packages.${stdenv.hostPlatform.system}.default
   ];
+
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri-unstable;
+  };
 
   system.stateVersion = "24.05"; # Did you read the comment?
 }

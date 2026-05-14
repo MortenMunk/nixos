@@ -7,7 +7,7 @@
     ./time.nix
     ./user.nix
     ./power.nix
-    ./sound.nix
+    ./audio.nix
     ./security.nix
     ./cachix.nix
     ./network.nix

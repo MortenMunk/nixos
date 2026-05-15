@@ -2,7 +2,7 @@
   programs.niri.settings.binds = with config.lib.niri.actions; {
     # Spawn
     "Mod+Q".action = spawn "kitty";
-    "Mod+R".action = spawn ["vicinae" "toggle"];
+    "Mod+R".action = spawn ["rofi" "-show" "drun"];
 
     # Lifecycles
     "Mod+C".action = close-window;

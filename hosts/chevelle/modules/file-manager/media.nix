@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     unzip
     nautilus
+    tree
   ];
 
   programs = {

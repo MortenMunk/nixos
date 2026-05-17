@@ -9,8 +9,8 @@
           owner = "morten";
           mode = "600";
         };
-        work-vpn-impala = {
-          file = self.ageFiles.work-vpn-impala;
+        work-vpn = {
+          file = self.ageFiles.work-vpn;
           path = "/etc/wireguard/wg1.conf";
           owner = "morten";
           mode = "600";

@@ -3,6 +3,6 @@ let
   chevelle = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMpiAUjJmWeU6SsR8AdRnAXyQqPca0Otbf9tlkgTPpPJ";
 in {
   "github-impala.age".publicKeys = [impala];
-  "work-vpn-impala.age".publicKeys = [impala];
+  "work-vpn.age".publicKeys = [impala chevelle];
   "github-chevelle.age".publicKeys = [chevelle];
 }

@@ -22,6 +22,7 @@
       myNetwork
       myGaming
       myAudio
+      myCachix
 
       inputs.agenix.nixosModules.default
     ];

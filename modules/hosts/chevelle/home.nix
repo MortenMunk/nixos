@@ -8,8 +8,8 @@
     home.homeDirectory = "/home/morten";
     home.stateVersion = "25.05";
 
-    #imports = with self.homeModules; [];
-
-    #home.packages = with pkgs; [];
+    imports = with self.homeModules; [
+      myCli
+    ];
   };
 }

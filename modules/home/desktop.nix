@@ -11,6 +11,7 @@
       jetbrains-mono
       nerd-fonts.fira-code
       nerd-fonts.droid-sans-mono
+      nautilus
     ];
 
     fonts.fontconfig.enable = true;

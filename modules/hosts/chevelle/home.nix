@@ -21,9 +21,6 @@
 
     nixpkgs.config.allowUnfree = true;
 
-    # Silence stupid error
-    gtk.gtk4.theme = null;
-
     myNiri = {
       dualMonitor.enable = true;
       screenshotKey = "Mod+S";

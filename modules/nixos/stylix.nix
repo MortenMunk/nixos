@@ -20,7 +20,10 @@
         dark = "Gruvbox-Plus-Dark";
       };
       enableReleaseChecks = false;
-      targets.grub.enable = false;
+      targets = {
+        kmscon.enable = false;
+        grub.enable = false;
+      };
     };
   };
 }

@@ -49,7 +49,7 @@
       ssh = {
         enable = true;
         enableDefaultConfig = false;
-        matchBlocks = {
+        settings = {
           "github.com" = {
             addKeysToAgent = "yes";
             identityFile = "~/.ssh/github_private_key";

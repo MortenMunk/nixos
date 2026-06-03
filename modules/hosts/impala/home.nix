@@ -21,7 +21,6 @@
 
     nixpkgs.config.allowUnfree = true;
 
-    # Silence stupid error
-    gtk.gtk4.theme = null;
+    myNoctalia.laptop.enable = true;
   };
 }

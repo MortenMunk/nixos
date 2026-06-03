@@ -4,6 +4,7 @@
       myNiri
       myNiriKeybinds
       myVicinae
+      myNoctalia
     ];
 
     programs.swaylock.enable = true;

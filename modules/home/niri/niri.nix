@@ -22,7 +22,7 @@
 
           spawn-at-startup = [
             {argv = ["swaybg" "-i" "${self.wallpapers.mountain}"];}
-            {command = ["noctalia-shell"];}
+            {command = ["noctalia"];}
           ];
 
           prefer-no-csd = true;

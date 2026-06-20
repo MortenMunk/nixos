@@ -9,6 +9,7 @@
       obsidian
       libreoffice
       brave
+      proton-vpn
     ];
 
     programs = {

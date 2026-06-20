@@ -19,7 +19,6 @@
 
       custom_discord = {
         enable = true;
-        wrapDiscord = true;
       };
     };
   };

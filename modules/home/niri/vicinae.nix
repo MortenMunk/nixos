@@ -1,9 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.homeModules.myVicinae = {...}: {
+_: {
+  flake.homeModules.myVicinae = _: {
     programs.vicinae = {
       enable = true;
       systemd = {

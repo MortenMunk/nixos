@@ -1,8 +1,4 @@
-{
-  self,
-  lib,
-  ...
-}: {
+{self, ...}: {
   flake.homeModules.myNiri = {
     config,
     lib,

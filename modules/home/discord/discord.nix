@@ -1,4 +1,4 @@
-{self, ...}: {
+_: {
   flake.homeModules.myDiscord = {
     config,
     pkgs,

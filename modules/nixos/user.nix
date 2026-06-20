@@ -1,4 +1,4 @@
-{self, ...}: {
+_: {
   flake.nixosModules.myUser = {pkgs, ...}: {
     users.users.morten = {
       isNormalUser = true;

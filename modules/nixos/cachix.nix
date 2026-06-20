@@ -1,4 +1,4 @@
-{self, ...}: {
+_: {
   flake.nixosModules.myCachix = {config, ...}: {
     nix.settings = {
       trusted-users = [config.users.users.morten.name];

@@ -1,5 +1,5 @@
 {self, ...}: {
-  flake.nixosModules.chevelleSecrets = {...}: {
+  flake.nixosModules.chevelleSecrets = _: {
     age = {
       identityPaths = ["/home/morten/.ssh/id_ed25519"];
       secrets.github-chevelle = {

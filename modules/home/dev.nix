@@ -1,20 +1,20 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.homeModules.myDev = {
-    pkgs,
-    config,
-    ...
-  }: {
-    home.file.".ssh/allowed_signers".text = ''
-      * ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINulh/fd4ld2kGTKlJ0iPkMtW5O00/1MOBuaGiGmO1as
-    '';
+{inputs, ...}: {
+  flake.homeModules.myDev = {pkgs, ...}: {
+    home = {
+      packages = with pkgs; [
+        deadnix
+        statix
+        inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.default
+      ];
 
-    home.file.".ssh/id_ed25519_github.pub".text = ''
-      ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINulh/fd4ld2kGTKlJ0iPkMtW5O00/1MOBuaGiGmO1as
-    '';
+      file.".ssh/allowed_signers".text = ''
+        * ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINulh/fd4ld2kGTKlJ0iPkMtW5O00/1MOBuaGiGmO1as
+      '';
+
+      file.".ssh/id_ed25519_github.pub".text = ''
+        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINulh/fd4ld2kGTKlJ0iPkMtW5O00/1MOBuaGiGmO1as
+      '';
+    };
 
     services.ssh-agent.enable = true;
 
@@ -55,25 +55,6 @@
             identityFile = "~/.ssh/github_private_key";
             identitiesOnly = true;
           };
-
-          "ailab-1" = {
-            hostname = "ailab-fe01.srv.aau.dk";
-            user = "pu74by@student.aau.dk";
-            identitiesOnly = true;
-          };
-
-          "ailab-2" = {
-            hostname = "ailab-fe02.srv.aau.dk";
-            user = "pu74by@student.aau.dk";
-            identitiesOnly = true;
-          };
-
-          "ailab-vpn" = {
-            hostname = "ailab-fe02.srv.aau.dk";
-            user = "pu74by@student.aau.dk";
-            proxyJump = "pu74by@student.aau.dk@sshgw.aau.dk";
-            identitiesOnly = true;
-          };
         };
       };
 
@@ -88,10 +69,6 @@
 
     stylix.targets.vscode.profileNames = [
       "default"
-    ];
-
-    home.packages = [
-      inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
   };
 }

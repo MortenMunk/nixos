@@ -1,16 +1,10 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.homeModules.chevelleHome = {
-    pkgs,
-    config,
-    ...
-  }: {
-    home.username = "morten";
-    home.homeDirectory = "/home/morten";
-    home.stateVersion = "25.05";
+{self, ...}: {
+  flake.homeModules.chevelleHome = {...}: {
+    home = {
+      username = "morten";
+      homeDirectory = "/home/morten";
+      stateVersion = "25.05";
+    };
 
     imports = with self.homeModules; [
       myCli

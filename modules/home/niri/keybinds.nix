@@ -1,12 +1,7 @@
-{
-  self,
-  lib,
-  ...
-}: {
+_: {
   flake.homeModules.myNiriKeybinds = {
     config,
     lib,
-    pkgs,
     ...
   }: {
     options.myNiri.screenshotKey = lib.mkOption {

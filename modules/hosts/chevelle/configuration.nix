@@ -50,9 +50,11 @@
       ];
     };
 
-    environment.variables.EDITOR = lib.mkOverride 900 "nvim";
-    environment.variables.VISUAL = lib.mkOverride 900 "nvim";
-    environment.variables.SUDO_EDITOR = lib.mkOverride 900 "nvim";
+    environment.variables = {
+      EDITOR = lib.mkOverride 900 "nvim";
+      VISUAL = lib.mkOverride 900 "nvim";
+      SUDO_EDITOR = lib.mkOverride 900 "nvim";
+    };
 
     networking.hostName = "chevelle";
 

@@ -2,7 +2,6 @@
   flake.nixosModules.impalaModule = {
     config,
     lib,
-    pkgs,
     modulesPath,
     ...
   }: {

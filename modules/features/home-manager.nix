@@ -1,9 +1,5 @@
-{
-  self,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.myHomeManager = {pkgs, ...}: {
+{inputs, ...}: {
+  flake.nixosModules.myHomeManager = {...}: {
     imports = [
       inputs.home-manager.nixosModules.default
     ];

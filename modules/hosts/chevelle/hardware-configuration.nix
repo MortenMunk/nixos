@@ -2,7 +2,6 @@
   flake.nixosModules.chevelleModule = {
     config,
     lib,
-    pkgs,
     modulesPath,
     ...
   }: {

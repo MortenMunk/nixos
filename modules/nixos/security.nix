@@ -1,5 +1,5 @@
-{self, ...}: {
-  flake.nixosModules.mySecurity = {pkgs, ...}: {
+_: {
+  flake.nixosModules.mySecurity = _: {
     security = {
       sudo.enable = false;
       sudo-rs.enable = true;

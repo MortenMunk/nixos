@@ -1,5 +1,5 @@
 {self, ...}: {
-  flake.nixosModules.impalaSecrets = {...}: {
+  flake.nixosModules.impalaSecrets = _: {
     age = {
       identityPaths = ["/home/morten/.ssh/id_ed25519"];
       secrets = {

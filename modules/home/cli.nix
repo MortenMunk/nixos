@@ -1,4 +1,4 @@
-{self, ...}: {
+_: {
   flake.homeModules.myCli = {pkgs, ...}: {
     programs = {
       fish = {

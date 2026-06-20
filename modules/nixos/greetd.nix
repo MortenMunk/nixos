@@ -1,4 +1,4 @@
-{self, ...}: {
+_: {
   flake.nixosModules.myGreetd = {pkgs, ...}: {
     services.greetd = {
       enable = true;

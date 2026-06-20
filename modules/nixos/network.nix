@@ -1,13 +1,7 @@
-{self, ...}: {
-  flake.nixosModules.myNetwork = {config, ...}: {
+_: {
+  flake.nixosModules.myNetwork = _: {
     networking = {
       networkmanager.enable = true;
-      #wg-quick.interfaces = {
-      #  wg1 = {
-      #    configFile = config.age.secrets.work-vpn.path;
-      #    autostart = false;
-      #  };
-      #};
     };
   };
 }

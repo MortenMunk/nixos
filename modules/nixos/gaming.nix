@@ -1,4 +1,4 @@
-{self, ...}: {
+_: {
   flake.nixosModules.myGaming = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       heroic

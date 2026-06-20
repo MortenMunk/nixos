@@ -11,3 +11,7 @@ boot:
 
 clean:
     @nh clean all
+
+lint:
+		@statix check .
+		@deadnix

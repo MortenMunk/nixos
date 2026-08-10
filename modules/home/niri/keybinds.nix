@@ -11,95 +11,93 @@ _: {
     };
 
     config = {
-      programs.niri.settings.binds = lib.mkMerge [
-        (with config.lib.niri.actions; {
+      wayland.windowManager.niri.settings.binds = lib.mkMerge [
+        {
           # Spawn
-          "Mod+Q".action = spawn "foot";
-          "Mod+R".action = spawn ["vicinae" "toggle"];
+          "Mod+Q".spawn = ["foot"];
+          "Mod+R".spawn = ["vicinae" "toggle"];
 
           # Lifecycles
-          "Mod+C".action = close-window;
-          "Mod+F".action = fullscreen-window;
-          "Mod+Shift+F".action = toggle-windowed-fullscreen;
-          "Mod+Space".action = toggle-window-floating;
+          "Mod+C".close-window = {};
+          "Mod+F".fullscreen-window = {};
+          "Mod+Shift+F".toggle-windowed-fullscreen = {};
+          "Mod+Space".toggle-window-floating = {};
 
-          "Mod+Ctrl+Tab".action = switch-focus-between-floating-and-tiling;
-          "Mod+Shift+Space".action = move-window-to-floating;
-          "Mod+Ctrl+Space".action = move-window-to-tiling;
+          "Mod+Ctrl+Tab".switch-focus-between-floating-and-tiling = {};
+          "Mod+Shift+Space".move-window-to-floating = {};
+          "Mod+Ctrl+Space".move-window-to-tiling = {};
 
-          "Mod+Ctrl+Minus".action = set-column-width "-10%";
-          "Mod+Ctrl+Plus".action = set-column-width "+10%";
+          "Mod+Ctrl+Minus".set-column-width = "-10%";
+          "Mod+Ctrl+Plus".set-column-width = "+10%";
 
-          "Mod+BracketLeft".action = switch-preset-column-width-back;
-          "Mod+BracketRight".action = switch-preset-column-width;
-          "Mod+Shift+M".action = center-column;
-          "Mod+M".action = maximize-column;
+          "Mod+Shift+M".center-column = {};
+          "Mod+M".maximize-column = {};
 
           # Focus (Vim)
-          "Mod+H".action = focus-column-left;
-          "Mod+L".action = focus-column-right;
-          "Mod+K".action = focus-window-up;
-          "Mod+J".action = focus-window-down;
+          "Mod+H".focus-column-left = {};
+          "Mod+L".focus-column-right = {};
+          "Mod+K".focus-window-up = {};
+          "Mod+J".focus-window-down = {};
 
           # Focus (Arrows)
-          "Mod+Left".action = focus-column-left;
-          "Mod+Right".action = focus-column-right;
-          "Mod+Up".action = focus-window-up;
-          "Mod+Down".action = focus-window-down;
+          "Mod+Left".focus-column-left = {};
+          "Mod+Right".focus-column-right = {};
+          "Mod+Up".focus-window-up = {};
+          "Mod+Down".focus-window-down = {};
 
           # Move (Vim)
-          "Mod+Shift+H".action = move-column-left;
-          "Mod+Shift+L".action = move-column-right;
-          "Mod+Shift+K".action = move-window-up;
-          "Mod+Shift+J".action = move-window-down;
+          "Mod+Shift+H".move-column-left = {};
+          "Mod+Shift+L".move-column-right = {};
+          "Mod+Shift+K".move-window-up = {};
+          "Mod+Shift+J".move-window-down = {};
 
           # Move (Arrows)
-          "Mod+Shift+Left".action = move-column-left;
-          "Mod+Shift+Right".action = move-column-right;
-          "Mod+Shift+Up".action = move-window-up;
-          "Mod+Shift+Down".action = move-window-down;
+          "Mod+Shift+Left".move-column-left = {};
+          "Mod+Shift+Right".move-column-right = {};
+          "Mod+Shift+Up".move-window-up = {};
+          "Mod+Shift+Down".move-window-down = {};
 
           # Workspaces (Numerical)
-          "Mod+1".action = focus-workspace 1;
-          "Mod+2".action = focus-workspace 2;
-          "Mod+3".action = focus-workspace 3;
-          "Mod+4".action = focus-workspace 4;
-          "Mod+5".action = focus-workspace 5;
+          "Mod+1".focus-workspace = 1;
+          "Mod+2".focus-workspace = 2;
+          "Mod+3".focus-workspace = 3;
+          "Mod+4".focus-workspace = 4;
+          "Mod+5".focus-workspace = 5;
 
-          "Mod+Shift+1".action = move-window-to-workspace-down {focus = true;};
-          "Mod+Shift+2".action = move-window-to-workspace-up {focus = true;};
+          "Mod+Shift+1".move-window-to-workspace-down._props = {focus = true;};
+          "Mod+Shift+2".move-window-to-workspace-up._props = {focus = true;};
 
           # Workspaces (Scroll Vim)
-          "Mod+Ctrl+J".action = focus-workspace-down;
-          "Mod+Ctrl+K".action = focus-workspace-up;
+          "Mod+Ctrl+J".focus-workspace-down = {};
+          "Mod+Ctrl+K".focus-workspace-up = {};
 
           # Workspace (Scroll Arrows)
-          "Mod+Ctrl+Down".action = focus-workspace-down;
-          "Mod+Ctrl+Up".action = focus-workspace-up;
+          "Mod+Ctrl+Down".focus-workspace-down = {};
+          "Mod+Ctrl+Up".focus-workspace-up = {};
 
           # Screenshot
-          ${config.myNiri.screenshotKey}.action.screenshot = {show-pointer = false;};
-        })
+          ${config.myNiri.screenshotKey}.screenshot._props = {show-pointer = false;};
+        }
 
-        (lib.mkIf config.myNiri.dualMonitor.enable (with config.lib.niri.actions; {
+        (lib.mkIf config.myNiri.dualMonitor.enable {
           # Monitor focus (Vim)
-          "Mod+Alt+H".action = focus-monitor-left;
-          "Mod+Alt+L".action = focus-monitor-right;
+          "Mod+Alt+H".focus-monitor-left = {};
+          "Mod+Alt+L".focus-monitor-right = {};
 
-          "Mod+Alt+Shift+H".action = move-window-to-monitor-left;
-          "Mod+Alt+Shift+L".action = move-window-to-monitor-right;
+          "Mod+Alt+Shift+H".move-window-to-monitor-left = {};
+          "Mod+Alt+Shift+L".move-window-to-monitor-right = {};
 
           # Monitor Focus (Arrows)
-          "Mod+Alt+Left".action = focus-monitor-left;
-          "Mod+Alt+Right".action = focus-monitor-right;
+          "Mod+Alt+Left".focus-monitor-left = {};
+          "Mod+Alt+Right".focus-monitor-right = {};
 
-          "Mod+Alt+Shift+Left".action = move-window-to-monitor-left;
-          "Mod+Alt+Shift+Right".action = move-window-to-monitor-right;
+          "Mod+Alt+Shift+Left".move-window-to-monitor-left = {};
+          "Mod+Alt+Shift+Right".move-window-to-monitor-right = {};
 
           # Overview'
-          "Mod+Tab".action = toggle-overview;
-          "Mod+F1".action = show-hotkey-overlay;
-        }))
+          "Mod+Tab".toggle-overview = {};
+          "Mod+F1".show-hotkey-overlay = {};
+        })
       ];
     };
   };

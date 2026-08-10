@@ -26,7 +26,6 @@
 
       inputs.agenix.nixosModules.default
       inputs.stylix.nixosModules.stylix
-      inputs.niri.nixosModules.niri
     ];
 
     home-manager.users.morten = self.homeModules.chevelleHome;
@@ -45,9 +44,6 @@
 
     nixpkgs = {
       config.allowUnfree = true;
-      overlays = [
-        inputs.niri.overlays.niri
-      ];
     };
 
     environment.variables = {

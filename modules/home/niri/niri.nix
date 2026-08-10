@@ -12,76 +12,74 @@
           swaybg
         ];
 
-        programs.niri.settings = {
-          environment."NIXOS_OZONE_WL" = "1";
-          input.keyboard.xkb.layout = "dk";
-
-          spawn-at-startup = [
-            {argv = ["swaybg" "-i" "${self.wallpapers.mountain}"];}
-            {command = ["noctalia"];}
-          ];
-
-          prefer-no-csd = true;
-
-          xwayland-satellite = {
-            enable = true;
-            path = lib.getExe pkgs.xwayland-satellite;
-          };
-
-          hotkey-overlay.skip-at-startup = true;
-          layout.gaps = 8;
-
-          window-rules = [
-            {
-              geometry-corner-radius = {
-                bottom-left = 6.0;
-                bottom-right = 6.0;
-                top-left = 6.0;
-                top-right = 6.0;
+        wayland.windowManager.niri = {
+          enable = true;
+          settings = {
+            environment."NIXOS_OZONE_WL" = "1";
+            input.keyboard.xkb.layout = "dk";
+            layout = {
+              gaps = 8;
+              focus-ring.off = {};
+              border = {
+                active-color = "#${config.lib.stylix.colors.base0D}";
+                inactive-color = "#${config.lib.stylix.colors.base03}";
               };
-              clip-to-geometry = true;
-            }
-            {
-              matches = [{app-id = "^foot$";}];
-              opacity = 0.90;
-            }
-          ];
+            };
+
+            cursor = {
+              xcursor-theme = config.home.pointerCursor.name;
+              xcursor-size = config.home.pointerCursor.size;
+            };
+
+            prefer-no-csd = {};
+            hotkey-overlay.skip-at-startup = {};
+            _children = [
+              {spawn-at-startup._args = ["swaybg" "-i" "${self.wallpapers.mountain}"];}
+              {spawn-at-startup._args = ["noctalia"];}
+              {
+                window-rule._children = [
+                  {geometry-corner-radius = 6.0;}
+                  {clip-to-geometry = true;}
+                ];
+              }
+              {
+                window-rule._children = [
+                  {match._props = {app-id = "^foot$";};}
+                  {opacity = 0.90;}
+                ];
+              }
+            ];
+          };
         };
       }
 
       (lib.mkIf config.myNiri.dualMonitor.enable {
-        programs.niri.settings.outputs = {
-          "DP-2" = {
-            enable = true;
-            focus-at-startup = true;
-            mode = {
-              width = 2560;
-              height = 1440;
-              refresh = 240.001;
-            };
-            position = {
-              x = 0;
-              y = 0;
-            };
-            scale = 1.0;
-            # prevent flicker
-            variable-refresh-rate = false;
-          };
+        wayland.windowManager.niri.settings._children = [
+          {
+            output = {
+              _args = ["DP-2"];
+              focus-at-startup = {};
 
-          "HDMI-A-2" = {
-            enable = true;
-            mode = {
-              width = 1920;
-              height = 1080;
-              refresh = 60.0;
+              mode = "2560x1440@240.001";
+              position._props = {
+                x = 0;
+                y = 0;
+              };
+              scale = 1.0;
             };
-            position = {
-              x = 2560;
-              y = 0;
+          }
+          {
+            output = {
+              _args = ["HDMI-A-2"];
+              mode = "1920x1080@60.0";
+              position._props = {
+                x = 2560;
+                y = 0;
+              };
+              scale = 1.0;
             };
-            scale = 1.0;
-          };
-        };
+          }
+        ];
       })
     ];
   };

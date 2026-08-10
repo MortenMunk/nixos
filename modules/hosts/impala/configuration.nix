@@ -27,7 +27,6 @@
 
       inputs.agenix.nixosModules.default
       inputs.stylix.nixosModules.stylix
-      inputs.niri.nixosModules.niri
       inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14s-amd-gen1
     ];
 
@@ -44,9 +43,6 @@
 
     nixpkgs = {
       config.allowUnfree = true;
-      overlays = [
-        inputs.niri.overlays.niri
-      ];
     };
 
     networking.hostName = "impala";

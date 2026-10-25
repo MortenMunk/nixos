@@ -11,7 +11,6 @@
         home.packages = with pkgs; [
           swaybg
         ];
-
         wayland.windowManager.niri = {
           enable = true;
           settings = {
@@ -20,15 +19,6 @@
             layout = {
               gaps = 8;
               focus-ring.off = {};
-              border = {
-                active-color = "#${config.lib.stylix.colors.base0D}";
-                inactive-color = "#${config.lib.stylix.colors.base03}";
-              };
-            };
-
-            cursor = {
-              xcursor-theme = config.home.pointerCursor.name;
-              xcursor-size = config.home.pointerCursor.size;
             };
 
             prefer-no-csd = {};

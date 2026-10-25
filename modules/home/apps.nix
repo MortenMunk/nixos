@@ -5,11 +5,11 @@
     ];
 
     home.packages = with pkgs; [
-      teams-for-linux
-      obsidian
       libreoffice
       brave
       proton-vpn
+      element
+      element-web
     ];
 
     programs = {

@@ -12,7 +12,7 @@
     };
 
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:mortenmunk/stylix/niri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

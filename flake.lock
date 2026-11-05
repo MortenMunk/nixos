@@ -345,6 +345,21 @@
         "type": "github"
       }
     },
+    "media-server": {
+      "locked": {
+        "lastModified": 1793898178,
+        "narHash": "sha256-G54mRHPz97uFsORpplfm85kDrIvKv7EEmQEjk9EfVVY=",
+        "ref": "refs/heads/main",
+        "rev": "43d79a862463f639bf2db49ac50f7a7cce589fa3",
+        "revCount": 2,
+        "type": "git",
+        "url": "ssh://git@github.com/MortenMunk/media-server.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/MortenMunk/media-server.git"
+      }
+    },
     "nixos-hardware": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
@@ -598,6 +613,7 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager_2",
         "import-tree": "import-tree",
+        "media-server": "media-server",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
         "nixvim": "nixvim",

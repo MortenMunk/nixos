@@ -20,6 +20,7 @@
     nixvim.url = "github:MortenMunk/nixvim";
     agenix.url = "github:ryantm/agenix";
     noctalia.url = "github:noctalia-dev/noctalia-shell";
+    media-server.url = "git+ssh://git@github.com/MortenMunk/media-server.git";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
